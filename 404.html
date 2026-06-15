@@ -20,8 +20,17 @@
   <div class="card">
     <img src="/icon.png" alt="Simple Count">
     <h1>Simple Count</h1>
-    <p>This link opens in the Simple Count app on iPhone. Open it on your iPhone, or download the app to import this event.</p>
+    <p>Open Simple Count on your iPhone to import this event.</p>
     <a href="https://apps.apple.com/app/id6761277550">Get Simple Count</a>
   </div>
+  <script>
+    // If this is a shared event link (/e/RECORD_ID), try to open the app directly.
+    // Falls back to showing the page above for non-iOS or uninstalled app.
+    var match = window.location.pathname.match(/^\/e\/([^/]+)$/);
+    if (match) {
+      var recordId = match[1];
+      window.location = 'simplecount://import-cloud?id=' + encodeURIComponent(recordId);
+    }
+  </script>
 </body>
 </html>
