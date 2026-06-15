@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["MTBWM887RM.com.caner.CountdownWidget"],
+        "components": [
+          { "/": "/e/*", "comment": "Shared event links" }
+        ]
+      }
+    ]
+  }
+}
