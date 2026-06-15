@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simple Count</title>
+  <meta property="og:site_name" content="Simple Count">
+  <meta property="og:title" content="Simple Count — Countdown Event">
+  <meta property="og:description" content="Tap to import this countdown event into Simple Count.">
+  <meta property="og:image" content="https://simplecountdownapp.github.io/icon.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Simple Count — Countdown Event">
+  <meta name="twitter:description" content="Tap to import this countdown event into Simple Count.">
+  <meta name="twitter:image" content="https://simplecountdownapp.github.io/icon.png">
   <style>
     body { font-family: -apple-system, sans-serif; display: flex; align-items: center;
            justify-content: center; min-height: 100vh; margin: 0; background: #f2f2f7; }
@@ -24,8 +33,6 @@
     <a href="https://apps.apple.com/app/id6761277550">Get Simple Count</a>
   </div>
   <script>
-    // If this is a shared event link (/e/RECORD_ID), try to open the app directly.
-    // Falls back to showing the page above for non-iOS or uninstalled app.
     var match = window.location.pathname.match(/^\/e\/([^/]+)$/);
     if (match) {
       var recordId = match[1];
