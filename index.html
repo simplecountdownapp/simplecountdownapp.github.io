@@ -20,8 +20,29 @@
   <div class="card">
     <img src="icon.png" alt="Simple Count">
     <h1>Simple Count</h1>
-    <p>Count down to the moments you're looking forward to — with beautiful home &amp; lock screen widgets.</p>
-    <a href="https://apps.apple.com/app/id6761277550">Get Simple Count</a>
+    <p id="pitch">Count down to the moments you're looking forward to — with beautiful home &amp; lock screen widgets.</p>
+    <a id="cta" href="https://apps.apple.com/app/id6761277550">Get Simple Count</a>
   </div>
+  <script>
+    var T = {
+      de: { p: "Zähle die Tage bis zu den Momenten, auf die du dich freust — mit schönen Widgets für Home- und Sperrbildschirm.", a: "Simple Count laden" },
+      nl: { p: "Tel af naar de momenten waar je naar uitkijkt — met prachtige widgets voor je begin- en toegangsscherm.", a: "Download Simple Count" },
+      fr: { p: "Comptez les jours avant les moments que vous attendez — avec de superbes widgets pour l'écran d'accueil et l'écran verrouillé.", a: "Télécharger Simple Count" },
+      es: { p: "Cuenta los días para los momentos que más esperas — con preciosos widgets para la pantalla de inicio y de bloqueo.", a: "Descargar Simple Count" },
+      it: { p: "Conta i giorni che mancano ai momenti che aspetti di più — con bellissimi widget per la schermata Home e di blocco.", a: "Scarica Simple Count" },
+      pt: { p: "Faça a contagem regressiva para os momentos que você mais espera — com lindos widgets para a tela de início e de bloqueio.", a: "Baixar o Simple Count" },
+      ru: { p: "Считайте дни до моментов, которых вы ждёте, — с красивыми виджетами для экрана «Домой» и экрана блокировки.", a: "Скачать Simple Count" },
+      tr: { p: "Dört gözle beklediğin anlara geri sayım yap — ana ekran ve kilit ekranı için şık widget'larla.", a: "Simple Count'u İndir" },
+      ja: { p: "楽しみな瞬間までをカウントダウン。ホーム画面とロック画面の美しいウィジェットで。", a: "Simple Count を入手" },
+      ko: { p: "기다려지는 순간까지 카운트다운하세요 — 홈 화면과 잠금 화면의 아름다운 위젯과 함께.", a: "Simple Count 받기" },
+      zh: { p: "倒数你最期待的时刻——精美的主屏幕和锁定屏幕小组件。", a: "获取 Simple Count" }
+    };
+    var lang = (navigator.language || "en").toLowerCase().split("-")[0];
+    if (T[lang]) {
+      document.documentElement.lang = lang;
+      document.getElementById("pitch").textContent = T[lang].p;
+      document.getElementById("cta").textContent = T[lang].a;
+    }
+  </script>
 </body>
 </html>

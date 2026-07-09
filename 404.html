@@ -29,10 +29,30 @@
   <div class="card">
     <img src="/icon.png" alt="Simple Count">
     <h1>Simple Count</h1>
-    <p>Open Simple Count on your iPhone to import this event.</p>
-    <a href="https://apps.apple.com/app/id6761277550">Get Simple Count</a>
+    <p id="pitch">Open Simple Count on your iPhone to import this event.</p>
+    <a id="cta" href="https://apps.apple.com/app/id6761277550">Get Simple Count</a>
   </div>
   <script>
+    var T = {
+      de: { p: "Öffne Simple Count auf deinem iPhone, um dieses Ereignis zu importieren.", a: "Simple Count laden" },
+      nl: { p: "Open Simple Count op je iPhone om dit evenement te importeren.", a: "Download Simple Count" },
+      fr: { p: "Ouvrez Simple Count sur votre iPhone pour importer cet événement.", a: "Télécharger Simple Count" },
+      es: { p: "Abre Simple Count en tu iPhone para importar este evento.", a: "Descargar Simple Count" },
+      it: { p: "Apri Simple Count sul tuo iPhone per importare questo evento.", a: "Scarica Simple Count" },
+      pt: { p: "Abra o Simple Count no seu iPhone para importar este evento.", a: "Baixar o Simple Count" },
+      ru: { p: "Откройте Simple Count на iPhone, чтобы импортировать это событие.", a: "Скачать Simple Count" },
+      tr: { p: "Bu etkinliği içe aktarmak için iPhone'unda Simple Count'u aç.", a: "Simple Count'u İndir" },
+      ja: { p: "このイベントを追加するには、iPhone で Simple Count を開いてください。", a: "Simple Count を入手" },
+      ko: { p: "이 이벤트를 가져오려면 iPhone에서 Simple Count를 여세요.", a: "Simple Count 받기" },
+      zh: { p: "请在 iPhone 上打开 Simple Count 以导入此事件。", a: "获取 Simple Count" }
+    };
+    var lang = (navigator.language || "en").toLowerCase().split("-")[0];
+    if (T[lang]) {
+      document.documentElement.lang = lang;
+      document.getElementById("pitch").textContent = T[lang].p;
+      document.getElementById("cta").textContent = T[lang].a;
+    }
+
     var match = window.location.pathname.match(/^\/e\/([^/]+)$/);
     if (match) {
       var recordId = match[1];
