@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Hard redirect to the App Store. Use https://simplecountdownapp.github.io/get
+       wherever a plain click-through link is wanted (Instagram bio, QR codes).
+       Do NOT point paid ads here — ad networks that reject direct App Store
+       destinations (Meta) treat an instant-redirect page the same way; ads
+       keep using the root landing page. Three layers so it works everywhere:
+       JS replace() (fastest, works in in-app browsers), meta refresh (JS off),
+       visible link (everything else). -->
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0;url=https://apps.apple.com/app/id6761277550">
+  <title>Simple Count</title>
+  <style>
+    body { font-family: -apple-system, sans-serif; display: flex; align-items: center;
+           justify-content: center; min-height: 100vh; margin: 0; background: #f2f2f7; }
+    a { color: #007aff; font-size: 16px; font-weight: 600; text-decoration: none; }
+  </style>
+  <script>window.location.replace("https://apps.apple.com/app/id6761277550");</script>
+</head>
+<body>
+  <a href="https://apps.apple.com/app/id6761277550">Simple Count on the App&nbsp;Store&nbsp;→</a>
+</body>
+</html>
