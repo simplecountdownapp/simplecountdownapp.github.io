@@ -19,6 +19,9 @@
     p  { font-size: 15px; color: #6e6e73; margin: 0 0 24px; line-height: 1.5; }
     a  { display: inline-block; background: #007aff; color: white; padding: 14px 28px;
          border-radius: 14px; text-decoration: none; font-size: 16px; font-weight: 600; }
+    .ig { display: block; background: none; color: #6e6e73; padding: 0; margin-top: 20px;
+          border-radius: 0; font-size: 13px; font-weight: 500; }
+    .ig:hover { color: #1c1c1e; }
   </style>
 </head>
 <body>
@@ -27,26 +30,28 @@
     <h1>Simple Count</h1>
     <p id="pitch">Count down to the moments you're looking forward to — with beautiful home &amp; lock screen widgets.</p>
     <a id="cta" href="https://apps.apple.com/app/id6761277550">Get Simple Count</a>
+    <a id="ig" class="ig" href="https://www.instagram.com/simplecountdownapp/">Follow us on Instagram → @simplecountdownapp</a>
   </div>
   <script>
     var T = {
-      de: { p: "Zähle die Tage bis zu den Momenten, auf die du dich freust — mit schönen Widgets für Home- und Sperrbildschirm.", a: "Simple Count laden" },
-      nl: { p: "Tel af naar de momenten waar je naar uitkijkt — met prachtige widgets voor je begin- en toegangsscherm.", a: "Download Simple Count" },
-      fr: { p: "Comptez les jours avant les moments que vous attendez — avec de superbes widgets pour l'écran d'accueil et l'écran verrouillé.", a: "Télécharger Simple Count" },
-      es: { p: "Cuenta los días para los momentos que más esperas — con preciosos widgets para la pantalla de inicio y de bloqueo.", a: "Descargar Simple Count" },
-      it: { p: "Conta i giorni che mancano ai momenti che aspetti di più — con bellissimi widget per la schermata Home e di blocco.", a: "Scarica Simple Count" },
-      pt: { p: "Faça a contagem regressiva para os momentos que você mais espera — com lindos widgets para a tela de início e de bloqueio.", a: "Baixar o Simple Count" },
-      ru: { p: "Считайте дни до моментов, которых вы ждёте, — с красивыми виджетами для экрана «Домой» и экрана блокировки.", a: "Скачать Simple Count" },
-      tr: { p: "Dört gözle beklediğin anlara geri sayım yap — ana ekran ve kilit ekranı için şık widget'larla.", a: "Simple Count'u İndir" },
-      ja: { p: "楽しみな瞬間までをカウントダウン。ホーム画面とロック画面の美しいウィジェットで。", a: "Simple Count を入手" },
-      ko: { p: "기다려지는 순간까지 카운트다운하세요 — 홈 화면과 잠금 화면의 아름다운 위젯과 함께.", a: "Simple Count 받기" },
-      zh: { p: "倒数你最期待的时刻——精美的主屏幕和锁定屏幕小组件。", a: "获取 Simple Count" }
+      de: { p: "Zähle die Tage bis zu den Momenten, auf die du dich freust — mit schönen Widgets für Home- und Sperrbildschirm.", a: "Simple Count laden", ig: "Folge uns auf Instagram → @simplecountdownapp" },
+      nl: { p: "Tel af naar de momenten waar je naar uitkijkt — met prachtige widgets voor je begin- en toegangsscherm.", a: "Download Simple Count", ig: "Volg ons op Instagram → @simplecountdownapp" },
+      fr: { p: "Comptez les jours avant les moments que vous attendez — avec de superbes widgets pour l'écran d'accueil et l'écran verrouillé.", a: "Télécharger Simple Count", ig: "Suivez-nous sur Instagram → @simplecountdownapp" },
+      es: { p: "Cuenta los días para los momentos que más esperas — con preciosos widgets para la pantalla de inicio y de bloqueo.", a: "Descargar Simple Count", ig: "Síguenos en Instagram → @simplecountdownapp" },
+      it: { p: "Conta i giorni che mancano ai momenti che aspetti di più — con bellissimi widget per la schermata Home e di blocco.", a: "Scarica Simple Count", ig: "Seguici su Instagram → @simplecountdownapp" },
+      pt: { p: "Faça a contagem regressiva para os momentos que você mais espera — com lindos widgets para a tela de início e de bloqueio.", a: "Baixar o Simple Count", ig: "Siga-nos no Instagram → @simplecountdownapp" },
+      ru: { p: "Считайте дни до моментов, которых вы ждёте, — с красивыми виджетами для экрана «Домой» и экрана блокировки.", a: "Скачать Simple Count", ig: "Мы в Instagram → @simplecountdownapp" },
+      tr: { p: "Dört gözle beklediğin anlara geri sayım yap — ana ekran ve kilit ekranı için şık widget'larla.", a: "Simple Count'u İndir", ig: "Bizi Instagram'da takip et → @simplecountdownapp" },
+      ja: { p: "楽しみな瞬間までをカウントダウン。ホーム画面とロック画面の美しいウィジェットで。", a: "Simple Count を入手", ig: "Instagramでフォロー → @simplecountdownapp" },
+      ko: { p: "기다려지는 순간까지 카운트다운하세요 — 홈 화면과 잠금 화면의 아름다운 위젯과 함께.", a: "Simple Count 받기", ig: "Instagram에서 팔로우 → @simplecountdownapp" },
+      zh: { p: "倒数你最期待的时刻——精美的主屏幕和锁定屏幕小组件。", a: "获取 Simple Count", ig: "在 Instagram 上关注我们 → @simplecountdownapp" }
     };
     var lang = (navigator.language || "en").toLowerCase().split("-")[0];
     if (T[lang]) {
       document.documentElement.lang = lang;
       document.getElementById("pitch").textContent = T[lang].p;
       document.getElementById("cta").textContent = T[lang].a;
+      document.getElementById("ig").textContent = T[lang].ig;
     }
   </script>
 </body>
