@@ -2,9 +2,18 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["MTBWM887RM.com.caner.CountdownWidget"],
+        "appIDs": [
+          "MTBWM887RM.com.caner.CountdownWidget"
+        ],
         "components": [
-          { "/": "/e/*", "comment": "Shared event links" }
+          {
+            "/": "/e/*",
+            "comment": "Shared event links"
+          },
+          {
+            "/": "/j/*",
+            "comment": "Count Down Together invite links (token after #)"
+          }
         ]
       }
     ]
