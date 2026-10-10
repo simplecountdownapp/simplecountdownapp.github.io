@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Count Down Together invite links: /j/#<iCloud share token>. With the
-       app installed iOS opens it directly (/j/* in apple-app-site-association)
-       and this page never shows. The token is after "#", so it never reaches
-       the server. -->
+  <!-- Count Down Together invite links: /j/#<iCloud share token>. iOS should
+       open them in the app (/j/* in apple-app-site-association), but on the
+       phone test (10 Oct 2026) it opened Safari instead, so this page hands
+       the invite to the app itself through simplecount://join?t=<token>, as
+       404.html does for /e/ links. The token is after "#", so it never
+       reaches the server. -->
   <meta name="apple-itunes-app" content="app-id=6761277550">
   <title>Simple Count</title>
   <meta property="og:site_name" content="Simple Count">
@@ -40,32 +42,35 @@
   <div class="card">
     <img src="/icon.png" alt="Simple Count">
     <h1 id="title">Count down together</h1>
-    <p id="pitch">You're invited to a shared countdown. Get Simple Count, then tap Join.</p>
+    <p id="pitch">You're invited to a shared countdown. Get Simple Count, then come back and tap Open in Simple Count.</p>
     <a id="get" href="https://apps.apple.com/app/id6761277550">Get Simple Count</a>
-    <a id="join" href="#">Join</a>
+    <a id="join" href="#">Open in Simple Count</a>
   </div>
   <script>
-    // "Join" hands the invite to iCloud, which opens Simple Count (once
-    // installed) and joins the countdown.
+    // Hand the invite to Simple Count right away: with the app installed,
+    // Safari asks "Open in Simple Count?" and the app joins. Without it,
+    // Safari says it can't open the address and this page stays, with Get
+    // Simple Count. The button retries after installing.
     var token = (window.location.hash || "").slice(1);
     var join = document.getElementById("join");
     if (/^[A-Za-z0-9_-]{1,64}$/.test(token)) {
-      join.href = "https://www.icloud.com/share/" + token;
+      join.href = "simplecount://join?t=" + encodeURIComponent(token);
+      window.location = join.href;
     } else {
       join.style.display = "none";
     }
     var T = {
-      de: { h: "Gemeinsam runterzählen", p: "Du bist zu einem gemeinsamen Countdown eingeladen. Lade Simple Count und tippe dann auf „Beitreten“.", g: "Simple Count laden", j: "Beitreten" },
-      nl: { h: "Samen aftellen", p: "Je bent uitgenodigd voor een gedeelde afteller. Download Simple Count en tik dan op Meedoen.", g: "Download Simple Count", j: "Meedoen" },
-      fr: { h: "Comptons les jours ensemble", p: "Vous êtes invité à un compte à rebours partagé. Téléchargez Simple Count, puis touchez Rejoindre.", g: "Télécharger Simple Count", j: "Rejoindre" },
-      es: { h: "Cuenten los días juntos", p: "Te invitaron a una cuenta regresiva compartida. Descarga Simple Count y luego toca Unirme.", g: "Descargar Simple Count", j: "Unirme" },
-      it: { h: "Contiamo i giorni insieme", p: "Sei invitato a un conto alla rovescia condiviso. Scarica Simple Count, poi tocca Partecipa.", g: "Scarica Simple Count", j: "Partecipa" },
-      pt: { h: "Contem os dias juntos", p: "Você foi convidado para uma contagem compartilhada. Baixe o Simple Count e toque em Participar.", g: "Baixar o Simple Count", j: "Participar" },
-      ru: { h: "Считаем дни вместе", p: "Вас пригласили в общий отсчёт. Скачайте Simple Count и нажмите «Присоединиться».", g: "Скачать Simple Count", j: "Присоединиться" },
-      tr: { h: "Birlikte geri say", p: "Ortak bir geri sayıma davet edildin. Simple Count'u indir, sonra Katıl'a dokun.", g: "Simple Count'u İndir", j: "Katıl" },
-      ja: { h: "一緒にカウントダウン", p: "共有カウントダウンに招待されています。Simple Count を入手して「参加」をタップしてください。", g: "Simple Count を入手", j: "参加" },
-      ko: { h: "함께 카운트다운", p: "공유 카운트다운에 초대받았어요. Simple Count를 받은 뒤 ‘참여’를 탭하세요.", g: "Simple Count 받기", j: "참여" },
-      zh: { h: "一起倒计时", p: "你被邀请加入一个共享倒计时。先获取 Simple Count，再轻点“加入”。", g: "获取 Simple Count", j: "加入" }
+      de: { h: "Gemeinsam runterzählen", p: "Du bist zu einem gemeinsamen Countdown eingeladen. Lade Simple Count, komm zurück und tippe auf „In Simple Count öffnen“.", g: "Simple Count laden", j: "In Simple Count öffnen" },
+      nl: { h: "Samen aftellen", p: "Je bent uitgenodigd voor een gedeelde afteller. Download Simple Count, kom terug en tik op 'Openen in Simple Count'.", g: "Download Simple Count", j: "Openen in Simple Count" },
+      fr: { h: "Comptons les jours ensemble", p: "Vous êtes invité à un compte à rebours partagé. Téléchargez Simple Count, puis revenez et touchez « Ouvrir dans Simple Count ».", g: "Télécharger Simple Count", j: "Ouvrir dans Simple Count" },
+      es: { h: "Cuenten los días juntos", p: "Te invitaron a una cuenta regresiva compartida. Descarga Simple Count, vuelve y toca «Abrir en Simple Count».", g: "Descargar Simple Count", j: "Abrir en Simple Count" },
+      it: { h: "Contiamo i giorni insieme", p: "Sei invitato a un conto alla rovescia condiviso. Scarica Simple Count, poi torna qui e tocca «Apri in Simple Count».", g: "Scarica Simple Count", j: "Apri in Simple Count" },
+      pt: { h: "Contem os dias juntos", p: "Você foi convidado para uma contagem compartilhada. Baixe o Simple Count, volte e toque em “Abrir no Simple Count”.", g: "Baixar o Simple Count", j: "Abrir no Simple Count" },
+      ru: { h: "Считаем дни вместе", p: "Вас пригласили в общий отсчёт. Скачайте Simple Count, вернитесь и нажмите «Открыть в Simple Count».", g: "Скачать Simple Count", j: "Открыть в Simple Count" },
+      tr: { h: "Birlikte geri say", p: "Ortak bir geri sayıma davet edildin. Simple Count'u indir, sonra geri gelip “Simple Count'ta Aç”a dokun.", g: "Simple Count'u İndir", j: "Simple Count'ta Aç" },
+      ja: { h: "一緒にカウントダウン", p: "共有カウントダウンに招待されています。Simple Count を入手したら、ここに戻って「Simple Count で開く」をタップしてください。", g: "Simple Count を入手", j: "Simple Count で開く" },
+      ko: { h: "함께 카운트다운", p: "공유 카운트다운에 초대받았어요. Simple Count를 받은 뒤 돌아와서 ‘Simple Count에서 열기’를 탭하세요.", g: "Simple Count 받기", j: "Simple Count에서 열기" },
+      zh: { h: "一起倒计时", p: "你被邀请加入一个共享倒计时。获取 Simple Count 后，回到这里轻点“在 Simple Count 中打开”。", g: "获取 Simple Count", j: "在 Simple Count 中打开" }
     };
     var lang = (navigator.language || "en").toLowerCase().split("-")[0];
     if (T[lang]) {
