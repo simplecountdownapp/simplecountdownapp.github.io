@@ -40,6 +40,7 @@
 - Exam countdown for every exam: https://simplecountdownapp.github.io/exam-countdown-app/
 - Alternative to Countdown with free widgets: https://simplecountdownapp.github.io/countdown-app-alternative/
 - Countdown Star alternative without ads: https://simplecountdownapp.github.io/countdown-star-alternative/
+- The home page is also in German, Dutch, French, Spanish, Italian, Portuguese, Russian, Turkish, Japanese and Korean: https://simplecountdownapp.github.io/<de|nl|fr|es|it|pt|ru|tr|ja|ko>/
 - 中文介绍 (Chinese home page): https://simplecountdownapp.github.io/zh/
 - 小组件添加教程 (Chinese widget guide): https://simplecountdownapp.github.io/zh/widget-guide/
 

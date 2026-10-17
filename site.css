@@ -185,3 +185,25 @@ ul.tips li { background: var(--surface); border-radius: 16px; padding: 14px 18px
 /* Chinese pages */
 :lang(zh-Hans) body, body:lang(zh-Hans) { font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; }
 :lang(zh-Hans) h1, :lang(zh-Hans) h2, :lang(zh-Hans) h3 { font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; letter-spacing: 0; }
+
+/* Language menu + suggestion bar (generated home pages) */
+.topbar-right { display: flex; align-items: center; gap: 10px; }
+.lang-menu { position: relative; }
+.lang-menu summary { list-style: none; cursor: pointer; font-size: 14px; font-weight: 600; padding: 8px 12px;
+                     border-radius: 999px; background: rgba(255,255,255,0.75); border: 1px solid rgba(38,47,54,0.1);
+                     white-space: nowrap; user-select: none; }
+.lang-menu summary::-webkit-details-marker { display: none; }
+.lang-menu summary::after { content: " ▾"; font-size: 11px; color: var(--muted); }
+.lang-list { position: absolute; right: 0; top: calc(100% + 8px); z-index: 20; background: var(--surface);
+             border-radius: 16px; box-shadow: 0 10px 40px rgba(38,47,54,0.18); padding: 6px; min-width: 170px;
+             display: grid; max-height: 70vh; overflow-y: auto; }
+.lang-list a { padding: 9px 12px; border-radius: 10px; text-decoration: none; color: var(--ink); font-size: 15px; }
+.lang-list a:hover { background: var(--yellow-soft); }
+.lang-list a[aria-current="page"] { background: var(--yellow); font-weight: 700; }
+@media (max-width: 420px) { .topbar .small-cta { display: none; } }
+.suggest-bar { background: var(--ink); color: #fff; font-size: 14px; padding: 10px 16px; display: flex;
+               align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; text-align: center; }
+.suggest-bar[hidden] { display: none; }
+.suggest-bar a { color: var(--yellow); font-weight: 700; text-decoration: none; }
+.suggest-bar button { background: none; border: 0; color: #C9D0D5; font-size: 16px; cursor: pointer; padding: 2px 6px; }
+.topbar { position: relative; z-index: 30; }
