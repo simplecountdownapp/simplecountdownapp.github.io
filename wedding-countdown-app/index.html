@@ -25,7 +25,9 @@
   <meta property="og:site_name" content="Simple Count">
   <meta property="og:title" content="Wedding Countdown App for iPhone: Share It With Your Partner">
   <meta property="og:description" content="A wedding countdown app for iPhone with free Home Screen widgets. Share the countdown with your partner so it stays in sync on both phones, with your checklist in the notes.">
-  <meta property="og:image" content="https://simplecountdownapp.github.io/img/shot-05.jpg">
+  <meta property="og:image" content="https://simplecountdownapp.github.io/img/og/en.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://simplecountdownapp.github.io/wedding-countdown-app/">
   <meta property="og:type" content="article">
   <meta name="twitter:card" content="summary_large_image">
@@ -74,13 +76,32 @@
   "image": "https://simplecountdownapp.github.io/img/shot-05.jpg"
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261017c">
+  <link rel="stylesheet" href="/site.css?v=20261017d">
 </head>
 <body>
   <div class="topbar">
     <div class="wrap">
       <a class="brand" href="/"><img src="/icon.png" alt="" width="34" height="34">Simple Count</a>
-      <a class="small-cta" href="https://apps.apple.com/app/id6761277550">Get the app</a>
+      <div class="topbar-right">
+          <details class="lang-menu">
+            <summary aria-label="Language: English"><span class="flag" aria-hidden="true">🇺🇸</span><span class="lang-current">English</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="lang-list">
+            <a href="/wedding-countdown-app/" hreflang="en" lang="en" aria-current="page"><span class="flag" aria-hidden="true">🇺🇸</span><span class="lang-names"><span class="lang-native">English</span><span class="lang-en" lang="en">English</span></span></a>
+            <a href="/de/wedding/" hreflang="de" lang="de"><span class="flag" aria-hidden="true">🇩🇪</span><span class="lang-names"><span class="lang-native">Deutsch</span><span class="lang-en" lang="en">German</span></span></a>
+            <a href="/nl/wedding/" hreflang="nl" lang="nl"><span class="flag" aria-hidden="true">🇳🇱</span><span class="lang-names"><span class="lang-native">Nederlands</span><span class="lang-en" lang="en">Dutch</span></span></a>
+            <a href="/fr/wedding/" hreflang="fr" lang="fr"><span class="flag" aria-hidden="true">🇫🇷</span><span class="lang-names"><span class="lang-native">Français</span><span class="lang-en" lang="en">French</span></span></a>
+            <a href="/es/wedding/" hreflang="es" lang="es"><span class="flag" aria-hidden="true">🇲🇽</span><span class="lang-names"><span class="lang-native">Español</span><span class="lang-en" lang="en">Spanish</span></span></a>
+            <a href="/it/wedding/" hreflang="it" lang="it"><span class="flag" aria-hidden="true">🇮🇹</span><span class="lang-names"><span class="lang-native">Italiano</span><span class="lang-en" lang="en">Italian</span></span></a>
+            <a href="/pt/wedding/" hreflang="pt" lang="pt-BR"><span class="flag" aria-hidden="true">🇧🇷</span><span class="lang-names"><span class="lang-native">Português</span><span class="lang-en" lang="en">Portuguese</span></span></a>
+            <a href="/ru/wedding/" hreflang="ru" lang="ru"><span class="flag" aria-hidden="true">🇷🇺</span><span class="lang-names"><span class="lang-native">Русский</span><span class="lang-en" lang="en">Russian</span></span></a>
+            <a href="/tr/wedding/" hreflang="tr" lang="tr"><span class="flag" aria-hidden="true">🇹🇷</span><span class="lang-names"><span class="lang-native">Türkçe</span><span class="lang-en" lang="en">Turkish</span></span></a>
+            <a href="/ja/wedding/" hreflang="ja" lang="ja"><span class="flag" aria-hidden="true">🇯🇵</span><span class="lang-names"><span class="lang-native">日本語</span><span class="lang-en" lang="en">Japanese</span></span></a>
+            <a href="/ko/wedding/" hreflang="ko" lang="ko"><span class="flag" aria-hidden="true">🇰🇷</span><span class="lang-names"><span class="lang-native">한국어</span><span class="lang-en" lang="en">Korean</span></span></a>
+            <a href="/zh/wedding/" hreflang="zh-Hans" lang="zh-Hans"><span class="flag" aria-hidden="true">🇨🇳</span><span class="lang-names"><span class="lang-native">简体中文</span><span class="lang-en" lang="en">Chinese</span></span></a>
+            </div>
+          </details>
+          <a class="small-cta" href="https://apps.apple.com/app/id6761277550">Get the app</a>
+        </div>
     </div>
   </div>
   <div class="wrap">
@@ -140,5 +161,18 @@
         <a href="mailto:simplecountdownapp@gmail.com">simplecountdownapp@gmail.com</a></div>
     </div>
   </footer>
+  <script>
+    // Close the language menu when tapping elsewhere; picking a language is a choice.
+    document.addEventListener("click", function (e) {
+      document.querySelectorAll("details.lang-menu[open]").forEach(function (d) {
+        if (!d.contains(e.target)) d.removeAttribute("open");
+      });
+    });
+    document.querySelectorAll(".lang-list a").forEach(function (a) {
+      a.addEventListener("click", function () {
+        try { localStorage.setItem("sc-lang-dismissed", "1"); } catch (e) {}
+      });
+    });
+  </script>
 </body>
 </html>

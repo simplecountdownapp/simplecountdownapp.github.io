@@ -25,7 +25,10 @@
   <meta property="og:site_name" content="Simple Count">
   <meta property="og:title" content="App compte à rebours de vacances pour iPhone : widget de voyage et liste de bagages">
   <meta property="og:description" content="Un compte à rebours de vacances et de voyage pour iPhone : widget gratuit sur l&#x27;écran d&#x27;accueil, compte à rebours en direct jusqu&#x27;au vol dans la Dynamic Island, et la liste de bagages et les réservations dans les notes.">
-  <meta property="og:image" content="https://simplecountdownapp.github.io/img/fr/shot-03.jpg">
+  <meta property="og:image" content="https://simplecountdownapp.github.io/img/og/fr.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <meta property="og:url" content="https://simplecountdownapp.github.io/fr/vacation/">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:type" content="article">
@@ -71,13 +74,32 @@
   "image": "https://simplecountdownapp.github.io/img/fr/shot-03.jpg"
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261017c">
+  <link rel="stylesheet" href="/site.css?v=20261017d">
 </head>
 <body>
   <div class="topbar">
     <div class="wrap">
       <a class="brand" href="/fr/"><img src="/icon.png" alt="" width="34" height="34">Simple Count</a>
-      <a class="small-cta" href="https://apps.apple.com/app/id6761277550">Télécharger</a>
+      <div class="topbar-right">
+          <details class="lang-menu">
+            <summary aria-label="Langue: Français"><span class="flag" aria-hidden="true">🇫🇷</span><span class="lang-current">Français</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="lang-list">
+            <a href="/vacation-countdown-app/" hreflang="en" lang="en"><span class="flag" aria-hidden="true">🇺🇸</span><span class="lang-names"><span class="lang-native">English</span><span class="lang-en" lang="en">English</span></span></a>
+            <a href="/de/vacation/" hreflang="de" lang="de"><span class="flag" aria-hidden="true">🇩🇪</span><span class="lang-names"><span class="lang-native">Deutsch</span><span class="lang-en" lang="en">German</span></span></a>
+            <a href="/nl/vacation/" hreflang="nl" lang="nl"><span class="flag" aria-hidden="true">🇳🇱</span><span class="lang-names"><span class="lang-native">Nederlands</span><span class="lang-en" lang="en">Dutch</span></span></a>
+            <a href="/fr/vacation/" hreflang="fr" lang="fr" aria-current="page"><span class="flag" aria-hidden="true">🇫🇷</span><span class="lang-names"><span class="lang-native">Français</span><span class="lang-en" lang="en">French</span></span></a>
+            <a href="/es/vacation/" hreflang="es" lang="es"><span class="flag" aria-hidden="true">🇲🇽</span><span class="lang-names"><span class="lang-native">Español</span><span class="lang-en" lang="en">Spanish</span></span></a>
+            <a href="/it/vacation/" hreflang="it" lang="it"><span class="flag" aria-hidden="true">🇮🇹</span><span class="lang-names"><span class="lang-native">Italiano</span><span class="lang-en" lang="en">Italian</span></span></a>
+            <a href="/pt/vacation/" hreflang="pt" lang="pt-BR"><span class="flag" aria-hidden="true">🇧🇷</span><span class="lang-names"><span class="lang-native">Português</span><span class="lang-en" lang="en">Portuguese</span></span></a>
+            <a href="/ru/vacation/" hreflang="ru" lang="ru"><span class="flag" aria-hidden="true">🇷🇺</span><span class="lang-names"><span class="lang-native">Русский</span><span class="lang-en" lang="en">Russian</span></span></a>
+            <a href="/tr/vacation/" hreflang="tr" lang="tr"><span class="flag" aria-hidden="true">🇹🇷</span><span class="lang-names"><span class="lang-native">Türkçe</span><span class="lang-en" lang="en">Turkish</span></span></a>
+            <a href="/ja/vacation/" hreflang="ja" lang="ja"><span class="flag" aria-hidden="true">🇯🇵</span><span class="lang-names"><span class="lang-native">日本語</span><span class="lang-en" lang="en">Japanese</span></span></a>
+            <a href="/ko/vacation/" hreflang="ko" lang="ko"><span class="flag" aria-hidden="true">🇰🇷</span><span class="lang-names"><span class="lang-native">한국어</span><span class="lang-en" lang="en">Korean</span></span></a>
+            <a href="/zh/vacation/" hreflang="zh-Hans" lang="zh-Hans"><span class="flag" aria-hidden="true">🇨🇳</span><span class="lang-names"><span class="lang-native">简体中文</span><span class="lang-en" lang="en">Chinese</span></span></a>
+            </div>
+          </details>
+          <a class="small-cta" href="https://apps.apple.com/app/id6761277550">Télécharger</a>
+        </div>
     </div>
   </div>
   <div class="wrap">
@@ -135,5 +157,18 @@
         <a href="mailto:simplecountdownapp@gmail.com">simplecountdownapp@gmail.com</a></div>
     </div>
   </footer>
+  <script>
+    // Close the language menu when tapping elsewhere; picking a language is a choice.
+    document.addEventListener("click", function (e) {
+      document.querySelectorAll("details.lang-menu[open]").forEach(function (d) {
+        if (!d.contains(e.target)) d.removeAttribute("open");
+      });
+    });
+    document.querySelectorAll(".lang-list a").forEach(function (a) {
+      a.addEventListener("click", function () {
+        try { localStorage.setItem("sc-lang-dismissed", "1"); } catch (e) {}
+      });
+    });
+  </script>
 </body>
 </html>

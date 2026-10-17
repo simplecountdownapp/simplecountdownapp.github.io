@@ -25,7 +25,10 @@
   <meta property="og:site_name" content="Simple Count">
   <meta property="og:title" content="iPhoneの試験カウントダウンアプリ：試験ごとにウィジェット">
   <meta property="og:description" content="無料ウィジェット付きのiPhone向け試験カウントダウン：試験ごとにカウントダウン、次の試験はいつもホーム画面に、前もって通知、勉強リストはメモに。受験にも。">
-  <meta property="og:image" content="https://simplecountdownapp.github.io/img/ja/shot-01.jpg">
+  <meta property="og:image" content="https://simplecountdownapp.github.io/img/og/ja.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <meta property="og:url" content="https://simplecountdownapp.github.io/ja/exams/">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:type" content="article">
@@ -71,13 +74,32 @@
   "image": "https://simplecountdownapp.github.io/img/ja/shot-01.jpg"
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261017c">
+  <link rel="stylesheet" href="/site.css?v=20261017d">
 </head>
 <body>
   <div class="topbar">
     <div class="wrap">
       <a class="brand" href="/ja/"><img src="/icon.png" alt="" width="34" height="34">Simple Count</a>
-      <a class="small-cta" href="https://apps.apple.com/app/id6761277550">入手</a>
+      <div class="topbar-right">
+          <details class="lang-menu">
+            <summary aria-label="言語: 日本語"><span class="flag" aria-hidden="true">🇯🇵</span><span class="lang-current">日本語</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+            <div class="lang-list">
+            <a href="/exam-countdown-app/" hreflang="en" lang="en"><span class="flag" aria-hidden="true">🇺🇸</span><span class="lang-names"><span class="lang-native">English</span><span class="lang-en" lang="en">English</span></span></a>
+            <a href="/de/exams/" hreflang="de" lang="de"><span class="flag" aria-hidden="true">🇩🇪</span><span class="lang-names"><span class="lang-native">Deutsch</span><span class="lang-en" lang="en">German</span></span></a>
+            <a href="/nl/exams/" hreflang="nl" lang="nl"><span class="flag" aria-hidden="true">🇳🇱</span><span class="lang-names"><span class="lang-native">Nederlands</span><span class="lang-en" lang="en">Dutch</span></span></a>
+            <a href="/fr/exams/" hreflang="fr" lang="fr"><span class="flag" aria-hidden="true">🇫🇷</span><span class="lang-names"><span class="lang-native">Français</span><span class="lang-en" lang="en">French</span></span></a>
+            <a href="/es/exams/" hreflang="es" lang="es"><span class="flag" aria-hidden="true">🇲🇽</span><span class="lang-names"><span class="lang-native">Español</span><span class="lang-en" lang="en">Spanish</span></span></a>
+            <a href="/it/exams/" hreflang="it" lang="it"><span class="flag" aria-hidden="true">🇮🇹</span><span class="lang-names"><span class="lang-native">Italiano</span><span class="lang-en" lang="en">Italian</span></span></a>
+            <a href="/pt/exams/" hreflang="pt" lang="pt-BR"><span class="flag" aria-hidden="true">🇧🇷</span><span class="lang-names"><span class="lang-native">Português</span><span class="lang-en" lang="en">Portuguese</span></span></a>
+            <a href="/ru/exams/" hreflang="ru" lang="ru"><span class="flag" aria-hidden="true">🇷🇺</span><span class="lang-names"><span class="lang-native">Русский</span><span class="lang-en" lang="en">Russian</span></span></a>
+            <a href="/tr/exams/" hreflang="tr" lang="tr"><span class="flag" aria-hidden="true">🇹🇷</span><span class="lang-names"><span class="lang-native">Türkçe</span><span class="lang-en" lang="en">Turkish</span></span></a>
+            <a href="/ja/exams/" hreflang="ja" lang="ja" aria-current="page"><span class="flag" aria-hidden="true">🇯🇵</span><span class="lang-names"><span class="lang-native">日本語</span><span class="lang-en" lang="en">Japanese</span></span></a>
+            <a href="/ko/exams/" hreflang="ko" lang="ko"><span class="flag" aria-hidden="true">🇰🇷</span><span class="lang-names"><span class="lang-native">한국어</span><span class="lang-en" lang="en">Korean</span></span></a>
+            <a href="/zh/exams/" hreflang="zh-Hans" lang="zh-Hans"><span class="flag" aria-hidden="true">🇨🇳</span><span class="lang-names"><span class="lang-native">简体中文</span><span class="lang-en" lang="en">Chinese</span></span></a>
+            </div>
+          </details>
+          <a class="small-cta" href="https://apps.apple.com/app/id6761277550">入手</a>
+        </div>
     </div>
   </div>
   <div class="wrap">
@@ -135,5 +157,18 @@
         <a href="mailto:simplecountdownapp@gmail.com">simplecountdownapp@gmail.com</a></div>
     </div>
   </footer>
+  <script>
+    // Close the language menu when tapping elsewhere; picking a language is a choice.
+    document.addEventListener("click", function (e) {
+      document.querySelectorAll("details.lang-menu[open]").forEach(function (d) {
+        if (!d.contains(e.target)) d.removeAttribute("open");
+      });
+    });
+    document.querySelectorAll(".lang-list a").forEach(function (a) {
+      a.addEventListener("click", function () {
+        try { localStorage.setItem("sc-lang-dismissed", "1"); } catch (e) {}
+      });
+    });
+  </script>
 </body>
 </html>

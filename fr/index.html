@@ -30,11 +30,13 @@
   <meta property="og:site_name" content="Simple Count">
   <meta property="og:title" content="Simple Count – widgets compte à rebours gratuits pour iPhone">
   <meta property="og:description" content="Comptez les jours avant vos voyages, anniversaires, mariages et concerts avec des widgets gratuits. Sans abonnement, sans pub, sans compte.">
-  <meta property="og:image" content="https://simplecountdownapp.github.io/icon.png">
+  <meta property="og:image" content="https://simplecountdownapp.github.io/img/og/fr.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://simplecountdownapp.github.io/fr/">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@simplecountapp">
   <script type="application/ld+json">
 {
@@ -138,7 +140,7 @@
   ]
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261017c">
+  <link rel="stylesheet" href="/site.css?v=20261017d">
 </head>
 <body>
   <div class="suggest-bar" id="suggest" hidden>
@@ -328,18 +330,19 @@
   </footer>
 
   <script>
-    // Close the language menu when tapping elsewhere.
+    // Close the language menu when tapping elsewhere; picking a language is a choice.
     document.addEventListener("click", function (e) {
       document.querySelectorAll("details.lang-menu[open]").forEach(function (d) {
         if (!d.contains(e.target)) d.removeAttribute("open");
       });
     });
-    // Picking a language from the menu is a choice: stop suggesting another one.
     document.querySelectorAll(".lang-list a").forEach(function (a) {
       a.addEventListener("click", function () {
         try { localStorage.setItem("sc-lang-dismissed", "1"); } catch (e) {}
       });
     });
+  </script>
+  <script>
     // Suggest (never force) the visitor's own language if it has a page.
     (function () {
       var PAGE = "fr";

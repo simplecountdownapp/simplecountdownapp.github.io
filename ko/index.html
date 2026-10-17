@@ -30,11 +30,13 @@
   <meta property="og:site_name" content="Simple Count">
   <meta property="og:title" content="Simple Count – iPhone 무료 카운트다운 위젯">
   <meta property="og:description" content="여행, 생일, 결혼식, 콘서트까지 남은 날을 무료 위젯으로. 구독 없음, 광고 없음, 계정 불필요.">
-  <meta property="og:image" content="https://simplecountdownapp.github.io/icon.png">
+  <meta property="og:image" content="https://simplecountdownapp.github.io/img/og/ko.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://simplecountdownapp.github.io/ko/">
   <meta property="og:locale" content="ko_KR">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@simplecountapp">
   <script type="application/ld+json">
 {
@@ -138,7 +140,7 @@
   ]
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261017c">
+  <link rel="stylesheet" href="/site.css?v=20261017d">
 </head>
 <body>
   <div class="suggest-bar" id="suggest" hidden>
@@ -328,18 +330,19 @@
   </footer>
 
   <script>
-    // Close the language menu when tapping elsewhere.
+    // Close the language menu when tapping elsewhere; picking a language is a choice.
     document.addEventListener("click", function (e) {
       document.querySelectorAll("details.lang-menu[open]").forEach(function (d) {
         if (!d.contains(e.target)) d.removeAttribute("open");
       });
     });
-    // Picking a language from the menu is a choice: stop suggesting another one.
     document.querySelectorAll(".lang-list a").forEach(function (a) {
       a.addEventListener("click", function () {
         try { localStorage.setItem("sc-lang-dismissed", "1"); } catch (e) {}
       });
     });
+  </script>
+  <script>
     // Suggest (never force) the visitor's own language if it has a page.
     (function () {
       var PAGE = "ko";
