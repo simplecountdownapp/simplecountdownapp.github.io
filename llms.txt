@@ -33,6 +33,13 @@
 ## Pages
 
 - Comparison of seven countdown apps for iPhone (free widgets, ads, subscriptions, prices; checked 17 Oct 2026): https://simplecountdownapp.github.io/best-countdown-app/
+- How to put a countdown widget on your Home Screen: https://simplecountdownapp.github.io/how-to-add-countdown-widget-iphone/
+- Christmas countdown widget: https://simplecountdownapp.github.io/christmas-countdown-widget/
+- Wedding countdown you share with your partner: https://simplecountdownapp.github.io/wedding-countdown-app/
+- Vacation countdown with a packing list: https://simplecountdownapp.github.io/vacation-countdown-app/
+- Exam countdown for every exam: https://simplecountdownapp.github.io/exam-countdown-app/
+- Alternative to Countdown with free widgets: https://simplecountdownapp.github.io/countdown-app-alternative/
+- Countdown Star alternative without ads: https://simplecountdownapp.github.io/countdown-star-alternative/
 
 ## Contact
 
