@@ -63,73 +63,25 @@
   }
   </script>
 
-  <style>
-    :root {
-      --yellow: #FFE66D; --coral: #FF686B; --turquoise: #4ECDC4; --ink: #262F36;
-      --bg: #f5f5f7; --surface: #ffffff; --text: #1c1c1e; --muted: #6e6e73;
-      --line: rgba(0,0,0,0.08); --accent: #007aff; --good: #1f9d55; --bad: #c4372f;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #000000; --surface: #1c1c1e; --text: #f5f5f7; --muted: #a1a1a6;
-        --line: rgba(255,255,255,0.12); --accent: #0a84ff; --good: #4cd38a; --bad: #ff7a72;
-      }
-    }
-    * { box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0;
-           background: var(--bg); color: var(--text); line-height: 1.55;
-           -webkit-font-smoothing: antialiased; }
-    a { color: var(--accent); }
-    .wrap { max-width: 920px; margin: 0 auto; padding: 0 20px; }
-    nav { padding: 18px 0; font-size: 15px; }
-    nav a { text-decoration: none; font-weight: 600; color: var(--text); display: inline-flex;
-            align-items: center; gap: 8px; }
-    nav img { width: 28px; height: 28px; border-radius: 7px; }
-    h1 { font-size: clamp(28px, 5vw, 42px); line-height: 1.12; letter-spacing: -0.02em; margin: 18px 0 12px; }
-    .lede { font-size: 18px; color: var(--muted); margin: 0 0 16px; max-width: 40em; }
-    .disclosure { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--yellow);
-                  border-radius: 12px; padding: 14px 18px; font-size: 15px; margin: 0 0 8px; }
-    section { padding: 26px 0; }
-    h2 { font-size: clamp(22px, 3.6vw, 28px); letter-spacing: -0.01em; margin: 0 0 14px; }
-    h3 { font-size: 19px; margin: 0 0 4px; }
-    p { margin: 0 0 12px; }
-    ul.quick { padding-left: 20px; margin: 0; }
-    ul.quick li { margin-bottom: 8px; }
-    .tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
-    table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 14px; }
-    th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
-    th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
-    tr:last-child td { border-bottom: none; }
-    td.app { font-weight: 600; white-space: nowrap; }
-    /* Phones: the table scrolls sideways; keep the app name in view. */
-    td.app, th:first-child { position: sticky; left: 0; background: var(--surface); z-index: 1; }
-    .y { color: var(--good); font-weight: 600; }
-    .n { color: var(--bad); font-weight: 600; }
-    .u { color: var(--muted); }
-    .note { font-size: 13px; color: var(--muted); margin-top: 10px; }
-    .app-card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
-                padding: 20px; margin-bottom: 12px; }
-    .app-card .by { font-size: 14px; color: var(--muted); margin-bottom: 10px; }
-    .app-card dl { margin: 0; display: grid; grid-template-columns: 9.5em 1fr; gap: 6px 12px; font-size: 15px; }
-    .app-card dt { color: var(--muted); }
-    .app-card dd { margin: 0; }
-    @media (max-width: 520px) { .app-card dl { grid-template-columns: 1fr; } .app-card dt { margin-top: 6px; } }
-    .cta { display: inline-block; background: var(--accent); color: #fff; padding: 13px 26px;
-           border-radius: 14px; text-decoration: none; font-size: 16px; font-weight: 600; }
-    footer { text-align: center; padding: 36px 0 52px; font-size: 14px; color: var(--muted); }
-    footer a { color: var(--muted); font-weight: 600; text-decoration: none; }
-  </style>
+  <link rel="stylesheet" href="/site.css">
 </head>
 <body>
+  <div class="topbar">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/icon.png" alt="" width="34" height="34">Simple Count</a>
+      <a class="small-cta" href="https://apps.apple.com/app/id6761277550">Get the app</a>
+    </div>
+  </div>
   <div class="wrap">
-    <nav><a href="../"><img src="../icon.png" alt="" width="28" height="28">Simple Count</a></nav>
-
     <main>
+      <div class="article-head">
+      <span class="kicker">Checked against the App Store, 17 October 2026</span>
       <h1>Best countdown widget apps for iPhone (2026)</h1>
       <p class="lede">Most countdown apps are free to download. The differences are in what's free after that: the widgets, ads, and whether you end up paying monthly. Here are seven popular ones side by side.</p>
       <p class="disclosure"><strong>We make Simple Count</strong>, one of the apps below, so read this with that in mind. To keep it fair, every fact about the other apps comes from their own App Store listing (US store), checked on <strong>17 October 2026</strong>, and we say where each one is better than ours. Prices change; tap through to the App Store before you buy. Something wrong? Email <a href="mailto:simplecountdownapp@gmail.com">simplecountdownapp@gmail.com</a> and we'll fix it.</p>
+      </div>
 
-      <section id="quick">
+      <section class="section" id="quick">
         <h2>Quick answer</h2>
         <ul class="quick">
           <li><strong>Free widgets, no ads, no subscription:</strong> Simple Count. Every Home Screen and Lock Screen widget is free, and the only paid option is a $4.99 one-time unlock.</li>
@@ -140,9 +92,10 @@
         </ul>
       </section>
 
-      <section id="table">
+      <section class="section" id="table">
         <h2>Side by side</h2>
-        <div class="tablewrap">
+        <p class="swipe-hint">Swipe the table sideways to see every column →</p>
+        <div class="table-card compare"><div class="table-scroll">
           <table>
             <thead>
               <tr>
@@ -151,79 +104,79 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr class="us">
                 <td class="app">Simple Count</td>
-                <td><span class="y">Free</span>, every size</td>
-                <td><span class="y">Free</span></td>
-                <td><span class="y">None</span></td>
-                <td><span class="y">No</span></td>
+                <td><span class="yes">Free</span>, every size</td>
+                <td><span class="yes">Free</span></td>
+                <td><span class="yes">None</span></td>
+                <td><span class="yes">No</span></td>
                 <td>Pro $4.99 one-time (photos, unlimited sharing)</td>
-                <td><span class="n">No</span></td>
+                <td><span class="no">No</span></td>
               </tr>
               <tr>
-                <td class="app">Countdown <span class="u">(Find Appiness)</span></td>
-                <td><span class="n">Premium</span></td>
-                <td><span class="n">Premium</span></td>
-                <td><span class="n">Yes</span>, removed by the unlock</td>
-                <td><span class="y">No</span></td>
+                <td class="app">Countdown <span class="na">(Find Appiness)</span></td>
+                <td><span class="no">Premium</span></td>
+                <td><span class="no">Premium</span></td>
+                <td><span class="no">Yes</span>, removed by the unlock</td>
+                <td><span class="yes">No</span></td>
                 <td>$6.99 one-time: "Unlock widget and remove ads forever"</td>
-                <td><span class="y">Yes</span></td>
+                <td><span class="yes">Yes</span></td>
               </tr>
               <tr>
                 <td class="app">Countdown Star</td>
                 <td>Small, medium, large</td>
-                <td class="u">Not listed</td>
-                <td><span class="n">Yes</span> in the free version</td>
-                <td><span class="y">No</span></td>
+                <td class="na">Not listed</td>
+                <td><span class="no">Yes</span> in the free version</td>
+                <td><span class="yes">No</span></td>
                 <td>Remove Ads purchase, or the separate ad-free app ($1.99)</td>
-                <td><span class="y">Yes</span></td>
+                <td><span class="yes">Yes</span></td>
               </tr>
               <tr>
                 <td class="app">Countdown Buddy</td>
-                <td><span class="n">1 basic widget free</span></td>
+                <td><span class="no">1 basic widget free</span></td>
                 <td>Yes</td>
-                <td class="u">Not stated</td>
-                <td class="u">Not stated</td>
+                <td class="na">Not stated</td>
+                <td class="na">Not stated</td>
                 <td>Countdown + $3.59</td>
-                <td class="u">Not listed</td>
+                <td class="na">Not listed</td>
               </tr>
               <tr>
                 <td class="app">Outside</td>
-                <td><span class="y">Free</span></td>
-                <td><span class="y">Free</span> (also StandBy)</td>
-                <td class="u">Not stated</td>
-                <td><span class="n">Yes</span> (Pro)</td>
+                <td><span class="yes">Free</span></td>
+                <td><span class="yes">Free</span> (also StandBy)</td>
+                <td class="na">Not stated</td>
+                <td><span class="no">Yes</span> (Pro)</td>
                 <td>Pro: $2.99–$6.99 a month or $12.49–$44.49 a year</td>
-                <td class="u">Not listed</td>
+                <td class="na">Not listed</td>
               </tr>
               <tr>
                 <td class="app">Days</td>
                 <td>Yes</td>
                 <td>Yes</td>
-                <td class="u">Not stated</td>
-                <td><span class="n">Yes</span></td>
+                <td class="na">Not stated</td>
+                <td><span class="no">Yes</span></td>
                 <td>$0.99–$1.99 a month, $2.99–$5.99 a year, or lifetime $12.99–$14.99</td>
-                <td class="u">Not listed</td>
+                <td class="na">Not listed</td>
               </tr>
               <tr>
                 <td class="app">TimeCount</td>
                 <td>Yes</td>
-                <td class="u">Not listed</td>
-                <td class="u">Not stated</td>
-                <td><span class="n">Yes</span></td>
+                <td class="na">Not listed</td>
+                <td class="na">Not stated</td>
+                <td><span class="no">Yes</span></td>
                 <td>$3.99 a month, $13.99–$19.99 a year, or "Premium Forever" $34.99–$44.99</td>
-                <td class="u">Not listed</td>
+                <td class="na">Not listed</td>
               </tr>
             </tbody>
           </table>
-        </div>
+        </div></div>
         <p class="note">Price ranges are the different in-app purchase tiers each listing shows on the US App Store. "Not listed" / "Not stated" means the App Store listing doesn't say, not that the app lacks it. Checked 17 October 2026.</p>
       </section>
 
-      <section id="apps">
+      <section class="section" id="apps">
         <h2>The apps, one by one</h2>
 
-        <div class="app-card">
+        <div class="app-card us">
           <h3>Simple Count</h3>
           <div class="by">Caner Tasan (that's us) · <a href="https://apps.apple.com/app/id6761277550">App Store</a></div>
           <dl>
@@ -298,7 +251,7 @@
         </div>
       </section>
 
-      <section id="how">
+      <section class="section prose" id="how">
         <h2>How to choose</h2>
         <p><strong>Check what the widget costs.</strong> A countdown app is mostly its widget. Before you set up ten events, check whether the Home Screen and Lock Screen widgets are in the free version or behind a paywall.</p>
         <p><strong>One-time or monthly?</strong> A countdown app doesn't run servers for most of what it does. A one-time unlock (like Simple Count's or Countdown's) usually costs less over a year than a subscription.</p>
@@ -306,16 +259,17 @@
         <p><strong>Sharing that stays in sync.</strong> If you count down with someone else, look for shared countdowns that update for everyone (Simple Count, Outside), not just sharing a picture or a copy.</p>
       </section>
 
-      <section style="text-align:center">
-        <p>Want free widgets with no ads and no subscription?</p>
-        <a class="cta" href="https://apps.apple.com/app/id6761277550">Get Simple Count</a>
-      </section>
+      <div class="final" style="margin-bottom:8px">
+        <h2>Free widgets. No ads. No subscription.</h2>
+        <p>Simple Count is free on the App Store for iPhone and iPad.</p>
+        <a class="btn" href="https://apps.apple.com/app/id6761277550">Get Simple Count</a>
+      </div>
     </main>
   </div>
 
   <footer>
     <div class="wrap">
-      <a href="../">Simple Count</a> · <a href="../privacy/">Privacy</a> · <a href="../terms/">Terms</a> ·
+      <a href="/">Simple Count</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> ·
       <a href="mailto:simplecountdownapp@gmail.com">simplecountdownapp@gmail.com</a>
       <div style="margin-top:6px">Last checked against the App Store: 17 October 2026.</div>
     </div>
