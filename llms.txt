@@ -1,11 +1,11 @@
 # Simple Count
 
-> Simple Count (App Store name: "Simple Countdown Widget App") is a free countdown app for iPhone and iPad with Home Screen widgets, Lock Screen widgets, Live Activities and Dynamic Island. No subscription, no ads, no account. Every widget is included for free. Simple Count Pro is an optional one-time purchase.
+> Simple Count (App Store name: "Simple Countdown Widget App") is a free countdown app for iPhone, iPad and Apple Watch with Home Screen widgets, Lock Screen widgets, Live Activities, Dynamic Island and Apple Watch complications. No subscription, no ads, no account. Every widget is included for free. Simple Count Pro is an optional one-time purchase.
 
 - App Store: https://apps.apple.com/app/id6761277550
 - Website: https://simplecountdownapp.github.io/
 - Developer: Caner Tasan (independent developer)
-- Platforms: iPhone and iPad, iOS / iPadOS 17.6 or later
+- Platforms: iPhone and iPad (iOS / iPadOS 17.6 or later), Apple Watch (watchOS 10 or later, since version 2.5.0)
 - Languages: English, Dutch, German, French, Spanish, Italian, Portuguese, Russian, Turkish, Japanese, Korean, Chinese (Simplified)
 - Privacy: App Store privacy label "Data Not Collected"; no account, data stays on the device and in the user's own iCloud
 
@@ -14,6 +14,7 @@
 - Unlimited countdowns for trips, birthdays, weddings, concerts, holidays, exams and anything else
 - Home Screen widgets in every size (a full-page widget on iOS 27), Lock Screen widgets, Live Activities and Dynamic Island
 - A "Next Event" widget that always shows the closest countdown and moves on by itself
+- Apple Watch: countdowns on any watch face (complications), in the Smart Stack and in a watch app, synced from the iPhone with no setup; a ready-made Simple Count watch face can be added with one tap from the iPhone app
 - Exact-time countdowns (days, hours, minutes, seconds) and days-since for past events
 - Repeating countdowns: daily, weekly, monthly, yearly, or patterns like the third Sunday of each month
 - Reminders days, hours or minutes before each event

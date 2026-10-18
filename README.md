@@ -1,6 +1,6 @@
 # Simple Count – free countdown widgets for iPhone & iPad
 
-**Simple Count** is a countdown app for iPhone and iPad (App Store name: *Simple Countdown Widget App*).
+**Simple Count** is a countdown app for iPhone, iPad and Apple Watch (App Store name: *Simple Countdown Widget App*).
 Add the date of a trip, birthday, wedding, concert or exam, pick an emoji or a photo, and put it on your Home Screen.
 
 **Free. No subscription, no ads, no account. Every widget included.**
@@ -13,6 +13,7 @@ Add the date of a trip, birthday, wedding, concert or exam, pick an emoji or a p
 - Unlimited countdowns
 - Home Screen widgets in every size (a full-page widget on iOS 27), Lock Screen widgets, Live Activities and Dynamic Island
 - A "Next Event" widget that always shows the closest countdown
+- **Apple Watch**: countdowns on your watch face, in the Smart Stack and in their own watch app, with no setup (watchOS 10 or later)
 - **Count Down Together**: share a countdown by link and it stays in sync for everyone, widgets included (one shared countdown at a time free; joining is always free)
 - Repeating countdowns (yearly, monthly, weekly, daily, or patterns like the third Sunday) and reminders days, hours or minutes before
 - Notes with sections and checklists
