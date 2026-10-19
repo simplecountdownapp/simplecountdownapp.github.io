@@ -68,7 +68,7 @@ p { margin: 0 0 12px; }
              scroll-snap-align: center; box-shadow: 0 -4px 30px rgba(38,47,54,0.16); }
 @media (min-width: 960px) {
   .shots { justify-content: center; overflow: visible; }
-  .shots img { width: 172px; }
+  .shots img { width: 150px; }  /* six frames (5 iPhone + Apple Watch) fit the 1000px wrap */
   .shots img:nth-child(odd) { margin-top: 26px; }
 }
 
