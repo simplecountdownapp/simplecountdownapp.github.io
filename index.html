@@ -181,7 +181,7 @@
   ]
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261019a">
+  <link rel="stylesheet" href="/site.css?v=20261023a">
 </head>
 <body>
   <div class="suggest-bar" id="suggest" hidden>
@@ -234,6 +234,34 @@
   </header>
 
   <main>
+    <section class="section video-section" id="video">
+      <div class="wrap">
+        <video class="demo" id="demo" autoplay muted loop playsinline controls preload="metadata" poster="/video/simple-count.jpg"
+               aria-label="Simple Count in 20 seconds: countdown widgets on the Home Screen, Lock Screen and Dynamic Island">
+          <source src="/video/simple-count-vertical.mp4" type="video/mp4" media="(max-width: 640px)">
+          <source src="/video/simple-count.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+    <script>
+      (function () {
+        var v = document.getElementById("demo");
+        var phone = matchMedia("(max-width: 640px)");
+        var still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (still) { v.removeAttribute("autoplay"); v.pause(); }
+        // pick the cut for the screen now, and again whenever it crosses phone width (rotation, resizing)
+        function pick() {
+          var name = phone.matches ? "simple-count-vertical" : "simple-count";
+          if (v.currentSrc && v.currentSrc.indexOf("/video/" + name + ".mp4") !== -1) return;
+          v.poster = "/video/" + name + ".jpg";
+          v.src = "/video/" + name + ".mp4";
+          v.load();
+          if (!still) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        }
+        pick();
+        if (phone.addEventListener) phone.addEventListener("change", pick); else phone.addListener(pick);
+      })();
+    </script>
     <section class="section" id="features">
       <div class="wrap">
         <h2>Everything you need to count down</h2>
