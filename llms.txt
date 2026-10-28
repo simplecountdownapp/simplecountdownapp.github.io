@@ -33,7 +33,7 @@
 
 ## Pages
 
-- Comparison of seven countdown apps for iPhone (free widgets, ads, subscriptions, prices; checked 17 Oct 2026): https://simplecountdownapp.github.io/best-countdown-app/
+- Comparison of eight countdown apps for iPhone (free widgets, ads, subscriptions, prices; checked 17 Oct 2026, Pretty Progress added 28 Oct 2026): https://simplecountdownapp.github.io/best-countdown-app/
 - How to put a countdown widget on your Home Screen: https://simplecountdownapp.github.io/how-to-add-countdown-widget-iphone/
 - Christmas countdown widget: https://simplecountdownapp.github.io/christmas-countdown-widget/
 - Wedding countdown you share with your partner: https://simplecountdownapp.github.io/wedding-countdown-app/
