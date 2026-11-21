@@ -61,6 +61,19 @@ p { margin: 0 0 12px; }
 .pill { background: rgba(255,255,255,0.7); border: 1px solid rgba(38,47,54,0.08); color: var(--ink);
         padding: 6px 13px; border-radius: 999px; font-size: 14px; font-weight: 600; }
 .hero .meta { font-size: 13px; color: var(--ink-2); margin-top: 14px; }
+/* App Store in-app event banner, top of the home hero (make_home.py EVENTS) */
+.event-banner { display: flex; width: fit-content; align-items: center; gap: 12px; max-width: 100%; margin: 0 auto 22px;
+                padding: 8px 16px 8px 8px; background: var(--surface); color: var(--ink); text-decoration: none;
+                text-align: left; border-radius: 999px; box-shadow: var(--shadow); transition: transform .15s ease; }
+.event-banner[hidden] { display: none; }
+.event-banner:hover { color: var(--ink); transform: translateY(-1px); }
+.event-emoji { flex: none; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+               font-size: 22px; background: var(--coral-soft); }
+.event-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.25; }
+.event-text strong { font-family: var(--round); font-size: 15px; }
+.event-text span { font-size: 13px; color: var(--ink-2); }
+.event-go { flex: none; font-size: 24px; line-height: 1; color: var(--muted); }
+@media (max-width: 560px) { .event-banner { border-radius: 22px; } }
 .shots { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
          padding: 40px 20px 0; margin: 0 -20px; scrollbar-width: none; }
 .shots::-webkit-scrollbar { display: none; }

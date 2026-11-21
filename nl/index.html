@@ -140,7 +140,7 @@
   ]
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261023a">
+  <link rel="stylesheet" href="/site.css?v=20261121a">
 </head>
 <body>
   <div class="suggest-bar" id="suggest" hidden>
@@ -175,6 +175,8 @@
       </div>
     </div>
     <div class="wrap">
+      <a class="event-banner" href="https://apps.apple.com/app/id6761277550?eventid=6837456717" data-from="2026-11-22" data-until="2026-12-26" hidden><span class="event-emoji" aria-hidden="true">🎄</span><span class="event-text"><strong>Aftellen naar kerst</strong><span>Een kant-en-klare kerstafteller met één tik</span></span><span class="event-go" aria-hidden="true">›</span></a>
+      <a class="event-banner" href="https://apps.apple.com/app/id6761277550?eventid=6837471039" data-from="2026-12-26" data-until="2027-01-01" hidden><span class="event-emoji" aria-hidden="true">🎊</span><span class="event-text"><strong>Aftellen naar oudejaarsavond</strong><span>Afteller naar oudejaarsavond met één tik</span></span><span class="event-go" aria-hidden="true">›</span></a>
       <img class="icon" src="/icon.png" alt="Simple Count" width="92" height="92">
       <h1>Gratis aftel-widgets voor iPhone en iPad</h1>
       <p class="pitch">Tel af naar de momenten waar je naar uitkijkt – met prachtige widgets voor je begin- en toegangsscherm.</p>
@@ -342,6 +344,18 @@
         try { localStorage.setItem("sc-lang-dismissed", "1"); } catch (e) {}
       });
     });
+  </script>
+  <script>
+    // Show the App Store event banner for today's local date (see EVENTS in make_home.py).
+    (function () {
+      var m = /[?&]event-date=(\d{4}-\d{2}-\d{2})/.exec(location.search);
+      var d = new Date(), p = function (n) { return (n < 10 ? "0" : "") + n; };
+      var today = m ? m[1] : d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate());
+      var all = document.querySelectorAll(".event-banner");
+      for (var i = 0; i < all.length; i++) {
+        if (today >= all[i].getAttribute("data-from") && today < all[i].getAttribute("data-until")) all[i].hidden = false;
+      }
+    })();
   </script>
   <script>
     // Suggest (never force) the visitor's own language if it has a page.
