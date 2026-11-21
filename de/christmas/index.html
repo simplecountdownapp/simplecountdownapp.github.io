@@ -71,7 +71,7 @@
   "image": "https://simplecountdownapp.github.io/img/de/shot-01.jpg"
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261019a">
+  <link rel="stylesheet" href="/site.css?v=20261121b">
 </head>
 <body>
   <div class="topbar">
@@ -102,6 +102,8 @@
   <div class="wrap">
     <main>
       <div class="article-head">
+        <a class="event-banner" href="https://apps.apple.com/app/id6761277550?eventid=6837456717" data-from="2026-11-22" data-until="2026-12-26" hidden><span class="event-emoji" aria-hidden="true">🎄</span><span class="event-text"><strong>Countdown bis Weihnachten</strong><span>Ein fertiger Weihnachts-Countdown mit einem Tipp</span></span><span class="event-go" aria-hidden="true">›</span></a>
+        <a class="event-banner" href="https://apps.apple.com/app/id6761277550?eventid=6837471039" data-from="2026-12-26" data-until="2027-01-01" hidden><span class="event-emoji" aria-hidden="true">🎊</span><span class="event-text"><strong>Countdown bis Silvester</strong><span>Ein fertiger Silvester-Countdown mit einem Tipp</span></span><span class="event-go" aria-hidden="true">›</span></a>
         <span class="kicker">Weihnachten</span>
         <h1>Ein Weihnachts-Countdown auf deinem Home-Bildschirm</h1>
         <p class="lede">Wie viele Tage noch bis Weihnachten? Leg die Antwort auf deinen Home-Bildschirm und sieh jeden Morgen zu, wie die Zahl kleiner wird. Die Widgets von Simple Count sind kostenlos, und der Countdown startet danach von selbst für nächstes Jahr.</p>
@@ -166,6 +168,18 @@
         try { localStorage.setItem("sc-lang-dismissed", "1"); } catch (e) {}
       });
     });
+  </script>
+  <script>
+    // Show the App Store event banner for today's local date (tools/site/events.py).
+    (function () {
+      var m = /[?&]event-date=(\d{4}-\d{2}-\d{2})/.exec(location.search);
+      var d = new Date(), p = function (n) { return (n < 10 ? "0" : "") + n; };
+      var today = m ? m[1] : d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate());
+      var all = document.querySelectorAll(".event-banner");
+      for (var i = 0; i < all.length; i++) {
+        if (today >= all[i].getAttribute("data-from") && today < all[i].getAttribute("data-until")) all[i].hidden = false;
+      }
+    })();
   </script>
 </body>
 </html>

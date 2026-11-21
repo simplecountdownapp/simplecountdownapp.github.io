@@ -65,7 +65,7 @@
   "image": "https://simplecountdownapp.github.io/img/ru/shot-01.jpg"
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261019a">
+  <link rel="stylesheet" href="/site.css?v=20261121b">
 </head>
 <body>
   <div class="topbar">
@@ -96,6 +96,7 @@
   <div class="wrap">
     <main>
       <div class="article-head">
+        <a class="event-banner" href="https://apps.apple.com/app/id6761277550?eventid=6837471039" data-from="2026-11-22" data-until="2027-01-01" hidden><span class="event-emoji" aria-hidden="true">🎊</span><span class="event-text"><strong>Отсчёт до Нового года</strong><span>Готовый отсчёт до Нового года одним касанием</span></span><span class="event-go" aria-hidden="true">›</span></a>
         <span class="kicker">Новый год</span>
         <h1>Отсчёт до Нового года на вашем экране «Домой»</h1>
         <p class="lede">Сколько дней до Нового года? Поставьте ответ на экран «Домой» и смотрите, как число уменьшается каждое утро. Виджеты Simple Count бесплатны, а после праздника отсчёт сам начнётся заново.</p>
@@ -160,6 +161,18 @@
         try { localStorage.setItem("sc-lang-dismissed", "1"); } catch (e) {}
       });
     });
+  </script>
+  <script>
+    // Show the App Store event banner for today's local date (tools/site/events.py).
+    (function () {
+      var m = /[?&]event-date=(\d{4}-\d{2}-\d{2})/.exec(location.search);
+      var d = new Date(), p = function (n) { return (n < 10 ? "0" : "") + n; };
+      var today = m ? m[1] : d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate());
+      var all = document.querySelectorAll(".event-banner");
+      for (var i = 0; i < all.length; i++) {
+        if (today >= all[i].getAttribute("data-from") && today < all[i].getAttribute("data-until")) all[i].hidden = false;
+      }
+    })();
   </script>
 </body>
 </html>

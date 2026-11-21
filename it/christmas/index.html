@@ -71,7 +71,7 @@
   "image": "https://simplecountdownapp.github.io/img/it/shot-01.jpg"
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261019a">
+  <link rel="stylesheet" href="/site.css?v=20261121b">
 </head>
 <body>
   <div class="topbar">
@@ -102,6 +102,8 @@
   <div class="wrap">
     <main>
       <div class="article-head">
+        <a class="event-banner" href="https://apps.apple.com/app/id6761277550?eventid=6837456717" data-from="2026-11-22" data-until="2026-12-26" hidden><span class="event-emoji" aria-hidden="true">🎄</span><span class="event-text"><strong>Conto alla rovescia di Natale</strong><span>Un conto alla rovescia di Natale con un tocco</span></span><span class="event-go" aria-hidden="true">›</span></a>
+        <a class="event-banner" href="https://apps.apple.com/app/id6761277550?eventid=6837471039" data-from="2026-12-26" data-until="2027-01-01" hidden><span class="event-emoji" aria-hidden="true">🎊</span><span class="event-text"><strong>Conto alla rovescia Capodanno</strong><span>Un conto alla rovescia a Capodanno con un tocco</span></span><span class="event-go" aria-hidden="true">›</span></a>
         <span class="kicker">Natale</span>
         <h1>Un conto alla rovescia per Natale sulla tua schermata Home</h1>
         <p class="lede">Quanti giorni mancano a Natale? Metti la risposta sulla schermata Home e guardala scendere ogni mattina. I widget di Simple Count sono gratis e il conto alla rovescia riparte da solo per l'anno dopo.</p>
@@ -166,6 +168,18 @@
         try { localStorage.setItem("sc-lang-dismissed", "1"); } catch (e) {}
       });
     });
+  </script>
+  <script>
+    // Show the App Store event banner for today's local date (tools/site/events.py).
+    (function () {
+      var m = /[?&]event-date=(\d{4}-\d{2}-\d{2})/.exec(location.search);
+      var d = new Date(), p = function (n) { return (n < 10 ? "0" : "") + n; };
+      var today = m ? m[1] : d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate());
+      var all = document.querySelectorAll(".event-banner");
+      for (var i = 0; i < all.length; i++) {
+        if (today >= all[i].getAttribute("data-from") && today < all[i].getAttribute("data-until")) all[i].hidden = false;
+      }
+    })();
   </script>
 </body>
 </html>

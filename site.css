@@ -74,6 +74,7 @@ p { margin: 0 0 12px; }
 .event-text span { font-size: 13px; color: var(--ink-2); }
 .event-go { flex: none; font-size: 24px; line-height: 1; color: var(--muted); }
 @media (max-width: 560px) { .event-banner { border-radius: 22px; } }
+.article-head .event-banner { margin: 0 0 20px; }
 .shots { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
          padding: 40px 20px 0; margin: 0 -20px; scrollbar-width: none; }
 .shots::-webkit-scrollbar { display: none; }
