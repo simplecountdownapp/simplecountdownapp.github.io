@@ -140,7 +140,7 @@
   ]
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261121b">
+  <link rel="stylesheet" href="/site.css?v=20261123b">
 </head>
 <body>
   <div class="suggest-bar" id="suggest" hidden>
@@ -284,6 +284,8 @@
           <summary>可以和另一半或朋友一起倒计时吗？</summary>
           <p>可以，使用“一起倒计时”。通过“信息”或其他 App 发送邀请链接。倒计时会保持同步：任何人修改日期、照片或备注，所有人的手机和小组件都会更新。同时共享一个倒计时免费，加入永远免费。</p>
         </details>
+        <details class="more">
+          <summary>显示更多</summary>
         <details>
           <summary>支持 iPad 吗？可以同步吗？</summary>
           <p>支持。Simple Count 可在 iPhone 和 iPad（iOS / iPadOS 17.6 或更高版本）上使用，并通过你自己的 iCloud 免费同步倒计时、备注和提醒。</p>
@@ -292,19 +294,27 @@
           <summary>会收集我的数据吗？</summary>
           <p>不会。App Store 隐私标签为“未收集数据”。无需账户、无需注册；倒计时只保存在你的设备和你自己的 iCloud 中，开发者看不到，包括共享的倒计时。</p>
         </details>
+          <button type="button" class="less" hidden>收起</button>
+        </details>
       </div>
     </section>
 
     <section class="section" id="guides" style="padding-top:0">
       <div class="wrap">
         <h2>使用指南</h2>
-        <div class="related">
+        <div class="related cols-3">
           <a class="related-link" href="/zh/widget-guide/">怎么把倒数日放到 iPhone 主屏幕和锁定屏幕</a>
           <a class="related-link" href="/zh/new-year/">在主屏幕上倒数新年</a>
           <a class="related-link" href="/zh/wedding/">和另一半共享的婚礼倒计时</a>
+        </div>
+        <details class="more">
+          <summary>显示更多</summary>
+        <div class="related cols-3">
           <a class="related-link" href="/zh/vacation/">倒数下一次旅行，行李清单也在这里</a>
           <a class="related-link" href="/zh/exams/">每场考试都有自己的倒计时</a>
         </div>
+          <button type="button" class="less" hidden>收起</button>
+        </details>
       </div>
     </section>
 
@@ -342,6 +352,18 @@
     document.querySelectorAll(".lang-list a").forEach(function (a) {
       a.addEventListener("click", function () {
         try { localStorage.setItem("sc-lang-dismissed", "1"); } catch (e) {}
+      });
+    });
+  </script>
+  <script>
+    document.querySelectorAll("details.more").forEach(function (d) {
+      var less = d.querySelector(".less"), more = d.querySelector("summary");
+      less.hidden = false;
+      less.addEventListener("click", function () {
+        var top = less.getBoundingClientRect().top;
+        d.open = false;
+        more.focus({ preventScroll: true });
+        window.scrollBy({ top: more.getBoundingClientRect().top - top, behavior: "instant" });
       });
     });
   </script>

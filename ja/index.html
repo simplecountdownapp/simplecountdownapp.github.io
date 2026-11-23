@@ -140,7 +140,7 @@
   ]
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261121b">
+  <link rel="stylesheet" href="/site.css?v=20261123b">
 </head>
 <body>
   <div class="suggest-bar" id="suggest" hidden>
@@ -284,6 +284,8 @@
           <summary>パートナーや友達とカウントダウンを共有できますか？</summary>
           <p>はい、「一緒にカウントダウン」で共有できます。メッセージなど、好きなアプリで招待リンクを送ってください。つながったままなので、誰かが日付や写真、メモを変えると全員のiPhoneとウィジェットに反映されます。同時に1つの共有は無料、参加はいつでも無料です。</p>
         </details>
+        <details class="more">
+          <summary>もっと見る</summary>
         <details>
           <summary>iPadでも使えますか？</summary>
           <p>はい。Simple CountはiPhoneとiPad（iOS / iPadOS 17.6以降）で使え、カウントダウン、メモ、通知をあなたのiCloudで無料で同期します。</p>
@@ -292,19 +294,27 @@
           <summary>データは収集されますか？</summary>
           <p>いいえ。App Storeのプライバシーラベルは「データの収集なし」です。アカウントは不要で、カウントダウンはあなたのデバイスとiCloudにだけ保存され、開発者は共有したものも含めて見ることができません。</p>
         </details>
+          <button type="button" class="less" hidden>閉じる</button>
+        </details>
       </div>
     </section>
 
     <section class="section" id="guides" style="padding-top:0">
       <div class="wrap">
         <h2>ガイド</h2>
-        <div class="related">
+        <div class="related cols-3">
           <a class="related-link" href="/ja/widget-guide/">ホーム画面とロック画面にカウントダウンを置く方法</a>
           <a class="related-link" href="/ja/christmas/">ホーム画面にクリスマスまでのカウントダウンを</a>
           <a class="related-link" href="/ja/wedding/">2人で共有する結婚式のカウントダウン</a>
+        </div>
+        <details class="more">
+          <summary>もっと見る</summary>
+        <div class="related cols-3">
           <a class="related-link" href="/ja/vacation/">次の旅行までカウントダウン、持ち物リストつき</a>
           <a class="related-link" href="/ja/exams/">試験ごとにカウントダウン</a>
         </div>
+          <button type="button" class="less" hidden>閉じる</button>
+        </details>
       </div>
     </section>
 
@@ -342,6 +352,18 @@
     document.querySelectorAll(".lang-list a").forEach(function (a) {
       a.addEventListener("click", function () {
         try { localStorage.setItem("sc-lang-dismissed", "1"); } catch (e) {}
+      });
+    });
+  </script>
+  <script>
+    document.querySelectorAll("details.more").forEach(function (d) {
+      var less = d.querySelector(".less"), more = d.querySelector("summary");
+      less.hidden = false;
+      less.addEventListener("click", function () {
+        var top = less.getBoundingClientRect().top;
+        d.open = false;
+        more.focus({ preventScroll: true });
+        window.scrollBy({ top: more.getBoundingClientRect().top - top, behavior: "instant" });
       });
     });
   </script>

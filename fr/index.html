@@ -140,7 +140,7 @@
   ]
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261121b">
+  <link rel="stylesheet" href="/site.css?v=20261123b">
 </head>
 <body>
   <div class="suggest-bar" id="suggest" hidden>
@@ -284,6 +284,8 @@
           <summary>Puis-je partager un compte à rebours avec mon partenaire ou des amis ?</summary>
           <p>Oui, avec le compte à rebours partagé. Envoyez un lien d&#x27;invitation par WhatsApp, Messages ou toute autre app. Il reste lié : si quelqu&#x27;un change la date, la photo ou les notes, tout se met à jour sur les téléphones et widgets de chacun. Partager un compte à rebours à la fois est gratuit, le rejoindre l&#x27;est toujours.</p>
         </details>
+        <details class="more">
+          <summary>Afficher plus</summary>
         <details>
           <summary>Simple Count fonctionne-t-il sur iPad ?</summary>
           <p>Oui. Simple Count fonctionne sur iPhone et iPad (iOS et iPadOS 17.6 ou ultérieur) et synchronise gratuitement comptes à rebours, notes et rappels via votre propre iCloud.</p>
@@ -292,19 +294,27 @@
           <summary>Simple Count collecte-t-il mes données ?</summary>
           <p>Non. Selon l&#x27;étiquette de confidentialité de l&#x27;App Store, aucune donnée n&#x27;est collectée. Il n&#x27;y a pas de compte ; vos comptes à rebours restent sur votre appareil et dans votre propre iCloud, et le développeur ne les voit jamais, même partagés.</p>
         </details>
+          <button type="button" class="less" hidden>Afficher moins</button>
+        </details>
       </div>
     </section>
 
     <section class="section" id="guides" style="padding-top:0">
       <div class="wrap">
         <h2>Guides</h2>
-        <div class="related">
+        <div class="related cols-3">
           <a class="related-link" href="/fr/widget-guide/">Mettre un compte à rebours sur l'écran d'accueil et l'écran verrouillé</a>
           <a class="related-link" href="/fr/christmas/">Un compte à rebours de Noël sur votre écran d'accueil</a>
           <a class="related-link" href="/fr/wedding/">Un compte à rebours de mariage à partager à deux</a>
+        </div>
+        <details class="more">
+          <summary>Afficher plus</summary>
+        <div class="related cols-3">
           <a class="related-link" href="/fr/vacation/">Comptez les jours avant votre prochain voyage, liste de bagages comprise</a>
           <a class="related-link" href="/fr/exams/">Un compte à rebours pour chaque examen</a>
         </div>
+          <button type="button" class="less" hidden>Afficher moins</button>
+        </details>
       </div>
     </section>
 
@@ -342,6 +352,18 @@
     document.querySelectorAll(".lang-list a").forEach(function (a) {
       a.addEventListener("click", function () {
         try { localStorage.setItem("sc-lang-dismissed", "1"); } catch (e) {}
+      });
+    });
+  </script>
+  <script>
+    document.querySelectorAll("details.more").forEach(function (d) {
+      var less = d.querySelector(".less"), more = d.querySelector("summary");
+      less.hidden = false;
+      less.addEventListener("click", function () {
+        var top = less.getBoundingClientRect().top;
+        d.open = false;
+        more.focus({ preventScroll: true });
+        window.scrollBy({ top: more.getBoundingClientRect().top - top, behavior: "instant" });
       });
     });
   </script>

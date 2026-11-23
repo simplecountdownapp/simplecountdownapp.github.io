@@ -140,7 +140,7 @@
   ]
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261121b">
+  <link rel="stylesheet" href="/site.css?v=20261123b">
 </head>
 <body>
   <div class="suggest-bar" id="suggest" hidden>
@@ -284,6 +284,8 @@
           <summary>Kann ich einen Countdown mit meinem Partner oder Freunden teilen?</summary>
           <p>Ja, mit „Gemeinsamer Countdown“. Schick einen Einladungslink über WhatsApp, Nachrichten oder jede andere App. Der Countdown bleibt verbunden: Ändert jemand Datum, Foto oder Notizen, aktualisiert er sich auf allen Handys und Widgets. Einen Countdown gleichzeitig zu teilen ist kostenlos, beitreten immer.</p>
         </details>
+        <details class="more">
+          <summary>Mehr anzeigen</summary>
         <details>
           <summary>Funktioniert Simple Count auf dem iPad?</summary>
           <p>Ja. Simple Count läuft auf iPhone und iPad (ab iOS bzw. iPadOS 17.6) und synchronisiert Countdowns, Notizen und Erinnerungen kostenlos über deine eigene iCloud.</p>
@@ -292,19 +294,27 @@
           <summary>Sammelt Simple Count meine Daten?</summary>
           <p>Nein. Laut Datenschutzangaben im App Store werden keine Daten erfasst. Es gibt kein Konto; deine Countdowns bleiben auf deinem Gerät und in deiner eigenen iCloud, und der Entwickler sieht sie nie – auch geteilte nicht.</p>
         </details>
+          <button type="button" class="less" hidden>Weniger anzeigen</button>
+        </details>
       </div>
     </section>
 
     <section class="section" id="guides" style="padding-top:0">
       <div class="wrap">
         <h2>Anleitungen</h2>
-        <div class="related">
+        <div class="related cols-3">
           <a class="related-link" href="/de/widget-guide/">So kommt ein Countdown auf deinen Home-Bildschirm und Sperrbildschirm</a>
           <a class="related-link" href="/de/christmas/">Ein Weihnachts-Countdown auf deinem Home-Bildschirm</a>
           <a class="related-link" href="/de/wedding/">Ein Hochzeits-Countdown, den ihr zu zweit teilt</a>
+        </div>
+        <details class="more">
+          <summary>Mehr anzeigen</summary>
+        <div class="related cols-3">
           <a class="related-link" href="/de/vacation/">Zähl runter bis zur nächsten Reise – mit Packliste</a>
           <a class="related-link" href="/de/exams/">Ein Countdown für jede Prüfung auf deiner Liste</a>
         </div>
+          <button type="button" class="less" hidden>Weniger anzeigen</button>
+        </details>
       </div>
     </section>
 
@@ -342,6 +352,18 @@
     document.querySelectorAll(".lang-list a").forEach(function (a) {
       a.addEventListener("click", function () {
         try { localStorage.setItem("sc-lang-dismissed", "1"); } catch (e) {}
+      });
+    });
+  </script>
+  <script>
+    document.querySelectorAll("details.more").forEach(function (d) {
+      var less = d.querySelector(".less"), more = d.querySelector("summary");
+      less.hidden = false;
+      less.addEventListener("click", function () {
+        var top = less.getBoundingClientRect().top;
+        d.open = false;
+        more.focus({ preventScroll: true });
+        window.scrollBy({ top: more.getBoundingClientRect().top - top, behavior: "instant" });
       });
     });
   </script>

@@ -140,7 +140,7 @@
   ]
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261121b">
+  <link rel="stylesheet" href="/site.css?v=20261123b">
 </head>
 <body>
   <div class="suggest-bar" id="suggest" hidden>
@@ -284,6 +284,8 @@
           <summary>연인이나 친구와 카운트다운을 공유할 수 있나요?</summary>
           <p>네, &#x27;함께 카운트다운&#x27;으로요. 메시지 등 원하는 앱으로 초대 링크를 보내세요. 계속 연결되어 있어서 누가 날짜, 사진, 메모를 바꾸면 모두의 iPhone과 위젯에 반영돼요. 한 번에 1개 공유는 무료, 참여는 언제나 무료예요.</p>
         </details>
+        <details class="more">
+          <summary>더 보기</summary>
         <details>
           <summary>iPad에서도 되나요?</summary>
           <p>네. Simple Count는 iPhone과 iPad(iOS·iPadOS 17.6 이상)에서 쓸 수 있고, 카운트다운, 메모, 알림을 내 iCloud로 무료로 동기화해요.</p>
@@ -292,19 +294,27 @@
           <summary>제 데이터를 수집하나요?</summary>
           <p>아니요. App Store 개인정보 보호 라벨은 &#x27;데이터가 수집되지 않음&#x27;입니다. 계정이 없고, 카운트다운은 내 기기와 내 iCloud에만 저장되며, 개발자는 공유된 것을 포함해 볼 수 없어요.</p>
         </details>
+          <button type="button" class="less" hidden>접기</button>
+        </details>
       </div>
     </section>
 
     <section class="section" id="guides" style="padding-top:0">
       <div class="wrap">
         <h2>가이드</h2>
-        <div class="related">
+        <div class="related cols-3">
           <a class="related-link" href="/ko/widget-guide/">홈 화면과 잠금 화면에 카운트다운을 놓는 방법</a>
           <a class="related-link" href="/ko/christmas/">홈 화면에 크리스마스 카운트다운</a>
           <a class="related-link" href="/ko/wedding/">둘이 함께 보는 결혼식 카운트다운</a>
+        </div>
+        <details class="more">
+          <summary>더 보기</summary>
+        <div class="related cols-3">
           <a class="related-link" href="/ko/vacation/">다음 여행까지 카운트다운, 짐 목록까지</a>
           <a class="related-link" href="/ko/exams/">시험마다 카운트다운</a>
         </div>
+          <button type="button" class="less" hidden>접기</button>
+        </details>
       </div>
     </section>
 
@@ -342,6 +352,18 @@
     document.querySelectorAll(".lang-list a").forEach(function (a) {
       a.addEventListener("click", function () {
         try { localStorage.setItem("sc-lang-dismissed", "1"); } catch (e) {}
+      });
+    });
+  </script>
+  <script>
+    document.querySelectorAll("details.more").forEach(function (d) {
+      var less = d.querySelector(".less"), more = d.querySelector("summary");
+      less.hidden = false;
+      less.addEventListener("click", function () {
+        var top = less.getBoundingClientRect().top;
+        d.open = false;
+        more.focus({ preventScroll: true });
+        window.scrollBy({ top: more.getBoundingClientRect().top - top, behavior: "instant" });
       });
     });
   </script>

@@ -128,8 +128,21 @@ thead .col-pro { background: var(--yellow); color: var(--ink); }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after { content: "+"; font-family: var(--round); font-size: 22px; line-height: 1;
                       color: var(--coral); flex: 0 0 auto; transition: transform .2s ease; }
-.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details[open] > summary::after { transform: rotate(45deg); }
 .faq details p { color: var(--ink-2); margin: 10px 0 2px; font-size: 15px; }
+
+/* "Show more" / "Show less" on the home page (questions and guides) */
+details.more > summary, .less:not([hidden]) {
+                         display: block; width: fit-content; margin: 18px auto 0; padding: 11px 22px;
+                         border: 0; font-family: inherit; line-height: inherit; color: var(--ink); background: var(--surface); border-radius: 999px; box-shadow: var(--shadow);
+                         font-weight: 700; font-size: 15px; cursor: pointer; list-style: none; }
+details.more > summary::-webkit-details-marker { display: none; }
+details.more > summary:hover, .less:hover { outline: 2px solid var(--yellow); }
+details.more > summary:focus-visible, .less:focus-visible { outline: 3px solid var(--turquoise); }
+details.more[open] > summary { display: none; }
+.faq details.more { background: none; border-radius: 0; padding: 0; margin: 0; box-shadow: none; }
+.faq details.more > summary::after { content: none; }
+.related + details.more[open] { margin-top: 10px; }
 
 /* Final call to action */
 .final { background: var(--turquoise); border-radius: 28px; padding: 44px 24px; text-align: center; }
@@ -192,6 +205,10 @@ ul.tips { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 ul.tips li { background: var(--surface); border-radius: 16px; padding: 14px 18px; box-shadow: var(--shadow);
              color: var(--ink-2); border-left: 4px solid var(--turquoise); }
 .related { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
+@media (min-width: 600px) {
+  .related.cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .related.cols-3 { grid-template-columns: repeat(3, 1fr); }
+}
 .related-link { background: var(--surface); border-radius: 16px; padding: 14px 18px; box-shadow: var(--shadow);
                 text-decoration: none; font-weight: 600; color: var(--ink); }
 .related-link:hover { color: #000; outline: 2px solid var(--yellow); }

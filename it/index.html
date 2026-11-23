@@ -140,7 +140,7 @@
   ]
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261121b">
+  <link rel="stylesheet" href="/site.css?v=20261123b">
 </head>
 <body>
   <div class="suggest-bar" id="suggest" hidden>
@@ -284,6 +284,8 @@
           <summary>Posso condividere un conto alla rovescia con il partner o gli amici?</summary>
           <p>Sì, con il conto alla rovescia condiviso. Invia un link di invito tramite WhatsApp, Messaggi o qualsiasi altra app. Resta collegato: se qualcuno cambia data, foto o note, si aggiorna sul telefono e sui widget di tutti. Condividerne uno alla volta è gratis, unirsi lo è sempre.</p>
         </details>
+        <details class="more">
+          <summary>Mostra altro</summary>
         <details>
           <summary>Funziona su iPad?</summary>
           <p>Sì. Simple Count funziona su iPhone e iPad (iOS e iPadOS 17.6 o successivo) e sincronizza gratis conti alla rovescia, note e promemoria con il tuo iCloud.</p>
@@ -292,19 +294,27 @@
           <summary>Simple Count raccoglie i miei dati?</summary>
           <p>No. Secondo l&#x27;etichetta privacy dell&#x27;App Store non viene raccolto alcun dato. Non c&#x27;è un account; i tuoi conti alla rovescia restano sul dispositivo e nel tuo iCloud, e lo sviluppatore non li vede mai, nemmeno quelli condivisi.</p>
         </details>
+          <button type="button" class="less" hidden>Mostra meno</button>
+        </details>
       </div>
     </section>
 
     <section class="section" id="guides" style="padding-top:0">
       <div class="wrap">
         <h2>Guide</h2>
-        <div class="related">
+        <div class="related cols-3">
           <a class="related-link" href="/it/widget-guide/">Come mettere un conto alla rovescia sulla schermata Home e di blocco</a>
           <a class="related-link" href="/it/christmas/">Un conto alla rovescia per Natale sulla tua schermata Home</a>
           <a class="related-link" href="/it/wedding/">Un conto alla rovescia per il matrimonio da condividere in due</a>
+        </div>
+        <details class="more">
+          <summary>Mostra altro</summary>
+        <div class="related cols-3">
           <a class="related-link" href="/it/vacation/">Conta i giorni al prossimo viaggio, lista per la valigia inclusa</a>
           <a class="related-link" href="/it/exams/">Un conto alla rovescia per ogni esame</a>
         </div>
+          <button type="button" class="less" hidden>Mostra meno</button>
+        </details>
       </div>
     </section>
 
@@ -342,6 +352,18 @@
     document.querySelectorAll(".lang-list a").forEach(function (a) {
       a.addEventListener("click", function () {
         try { localStorage.setItem("sc-lang-dismissed", "1"); } catch (e) {}
+      });
+    });
+  </script>
+  <script>
+    document.querySelectorAll("details.more").forEach(function (d) {
+      var less = d.querySelector(".less"), more = d.querySelector("summary");
+      less.hidden = false;
+      less.addEventListener("click", function () {
+        var top = less.getBoundingClientRect().top;
+        d.open = false;
+        more.focus({ preventScroll: true });
+        window.scrollBy({ top: more.getBoundingClientRect().top - top, behavior: "instant" });
       });
     });
   </script>

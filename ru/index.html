@@ -140,7 +140,7 @@
   ]
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261121b">
+  <link rel="stylesheet" href="/site.css?v=20261123b">
 </head>
 <body>
   <div class="suggest-bar" id="suggest" hidden>
@@ -284,6 +284,8 @@
           <summary>Можно ли поделиться отсчётом с партнёром или друзьями?</summary>
           <p>Да, с помощью общего отсчёта. Отправьте ссылку-приглашение через WhatsApp, Сообщения или любое другое приложение. Отсчёт остаётся связанным: если кто-то меняет дату, фото или заметки, всё обновляется у всех. Делиться одним отсчётом одновременно бесплатно, присоединяться — всегда бесплатно.</p>
         </details>
+        <details class="more">
+          <summary>Показать ещё</summary>
         <details>
           <summary>Работает ли на iPad?</summary>
           <p>Да. Simple Count работает на iPhone и iPad (iOS и iPadOS 17.6 или новее) и бесплатно синхронизирует отсчёты, заметки и напоминания через ваш iCloud.</p>
@@ -292,19 +294,27 @@
           <summary>Собирает ли Simple Count мои данные?</summary>
           <p>Нет. По данным о конфиденциальности в App Store, данные не собираются. Аккаунта нет; отсчёты хранятся на вашем устройстве и в вашем iCloud, и разработчик их никогда не видит, даже общие.</p>
         </details>
+          <button type="button" class="less" hidden>Свернуть</button>
+        </details>
       </div>
     </section>
 
     <section class="section" id="guides" style="padding-top:0">
       <div class="wrap">
         <h2>Инструкции</h2>
-        <div class="related">
+        <div class="related cols-3">
           <a class="related-link" href="/ru/widget-guide/">Как добавить отсчёт на экран «Домой» и экран блокировки</a>
           <a class="related-link" href="/ru/new-year/">Отсчёт до Нового года на вашем экране «Домой»</a>
           <a class="related-link" href="/ru/wedding/">Отсчёт до свадьбы, общий на двоих</a>
+        </div>
+        <details class="more">
+          <summary>Показать ещё</summary>
+        <div class="related cols-3">
           <a class="related-link" href="/ru/vacation/">Считайте дни до поездки, со списком вещей</a>
           <a class="related-link" href="/ru/exams/">Отсчёт до каждого экзамена</a>
         </div>
+          <button type="button" class="less" hidden>Свернуть</button>
+        </details>
       </div>
     </section>
 
@@ -342,6 +352,18 @@
     document.querySelectorAll(".lang-list a").forEach(function (a) {
       a.addEventListener("click", function () {
         try { localStorage.setItem("sc-lang-dismissed", "1"); } catch (e) {}
+      });
+    });
+  </script>
+  <script>
+    document.querySelectorAll("details.more").forEach(function (d) {
+      var less = d.querySelector(".less"), more = d.querySelector("summary");
+      less.hidden = false;
+      less.addEventListener("click", function () {
+        var top = less.getBoundingClientRect().top;
+        d.open = false;
+        more.focus({ preventScroll: true });
+        window.scrollBy({ top: more.getBoundingClientRect().top - top, behavior: "instant" });
       });
     });
   </script>

@@ -140,7 +140,7 @@
   ]
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261121b">
+  <link rel="stylesheet" href="/site.css?v=20261123b">
 </head>
 <body>
   <div class="suggest-bar" id="suggest" hidden>
@@ -284,6 +284,8 @@
           <summary>Bir geri sayımı sevgilimle ya da arkadaşlarımla paylaşabilir miyim?</summary>
           <p>Evet, Birlikte Geri Say ile. WhatsApp, Mesajlar ya da başka bir uygulamayla davet bağlantısı gönder. Geri sayım bağlı kalır: biri tarihi, fotoğrafı ya da notları değiştirirse herkesin telefonunda ve widget&#x27;ında güncellenir. Aynı anda bir geri sayım paylaşmak ücretsiz, katılmak her zaman ücretsiz.</p>
         </details>
+        <details class="more">
+          <summary>Daha fazla göster</summary>
         <details>
           <summary>iPad&#x27;de çalışıyor mu?</summary>
           <p>Evet. Simple Count iPhone ve iPad&#x27;de (iOS ve iPadOS 17.6 veya üstü) çalışır; geri sayımları, notları ve hatırlatıcıları kendi iCloud&#x27;un üzerinden ücretsiz eşzamanlar.</p>
@@ -292,19 +294,27 @@
           <summary>Simple Count verilerimi topluyor mu?</summary>
           <p>Hayır. App Store gizlilik etiketine göre hiçbir veri toplanmıyor. Hesap yok; geri sayımların cihazında ve kendi iCloud&#x27;unda kalır, geliştirici onları asla görmez, paylaşılanları bile.</p>
         </details>
+          <button type="button" class="less" hidden>Daha az göster</button>
+        </details>
       </div>
     </section>
 
     <section class="section" id="guides" style="padding-top:0">
       <div class="wrap">
         <h2>Rehberler</h2>
-        <div class="related">
+        <div class="related cols-3">
           <a class="related-link" href="/tr/widget-guide/">Ana Ekran'a ve Kilitli Ekran'a geri sayım nasıl eklenir</a>
           <a class="related-link" href="/tr/new-year/">Ana Ekranında yılbaşına geri sayım</a>
           <a class="related-link" href="/tr/wedding/">Sevgilinle paylaştığın bir düğün geri sayımı</a>
+        </div>
+        <details class="more">
+          <summary>Daha fazla göster</summary>
+        <div class="related cols-3">
           <a class="related-link" href="/tr/vacation/">Bir sonraki seyahatine geri say, bavul listesiyle</a>
           <a class="related-link" href="/tr/exams/">Listendeki her sınav için bir geri sayım</a>
         </div>
+          <button type="button" class="less" hidden>Daha az göster</button>
+        </details>
       </div>
     </section>
 
@@ -342,6 +352,18 @@
     document.querySelectorAll(".lang-list a").forEach(function (a) {
       a.addEventListener("click", function () {
         try { localStorage.setItem("sc-lang-dismissed", "1"); } catch (e) {}
+      });
+    });
+  </script>
+  <script>
+    document.querySelectorAll("details.more").forEach(function (d) {
+      var less = d.querySelector(".less"), more = d.querySelector("summary");
+      less.hidden = false;
+      less.addEventListener("click", function () {
+        var top = less.getBoundingClientRect().top;
+        d.open = false;
+        more.focus({ preventScroll: true });
+        window.scrollBy({ top: more.getBoundingClientRect().top - top, behavior: "instant" });
       });
     });
   </script>

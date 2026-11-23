@@ -140,7 +140,7 @@
   ]
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261121b">
+  <link rel="stylesheet" href="/site.css?v=20261123b">
 </head>
 <body>
   <div class="suggest-bar" id="suggest" hidden>
@@ -284,6 +284,8 @@
           <summary>¿Puedo compartir una cuenta regresiva con mi pareja o amigos?</summary>
           <p>Sí, con la cuenta regresiva compartida. Envía un enlace de invitación por WhatsApp, Mensajes o cualquier otra app. Sigue vinculada: si alguien cambia la fecha, la foto o las notas, se actualiza en el teléfono y los widgets de todos. Compartir una a la vez es gratis y unirse siempre es gratis.</p>
         </details>
+        <details class="more">
+          <summary>Mostrar más</summary>
         <details>
           <summary>¿Funciona en iPad?</summary>
           <p>Sí. Simple Count funciona en iPhone y iPad (iOS y iPadOS 17.6 o posterior) y sincroniza gratis cuentas regresivas, notas y recordatorios con tu propio iCloud.</p>
@@ -292,19 +294,27 @@
           <summary>¿Simple Count recopila mis datos?</summary>
           <p>No. Según la etiqueta de privacidad del App Store, no se recopilan datos. No hay cuenta; tus cuentas regresivas se quedan en tu dispositivo y en tu propio iCloud, y el desarrollador nunca las ve, ni siquiera las compartidas.</p>
         </details>
+          <button type="button" class="less" hidden>Mostrar menos</button>
+        </details>
       </div>
     </section>
 
     <section class="section" id="guides" style="padding-top:0">
       <div class="wrap">
         <h2>Guías</h2>
-        <div class="related">
+        <div class="related cols-3">
           <a class="related-link" href="/es/widget-guide/">Cómo poner una cuenta regresiva en tu pantalla de inicio y de bloqueo</a>
           <a class="related-link" href="/es/christmas/">Una cuenta regresiva para Navidad en tu pantalla de inicio</a>
           <a class="related-link" href="/es/wedding/">Una cuenta regresiva para la boda que compartes con tu pareja</a>
+        </div>
+        <details class="more">
+          <summary>Mostrar más</summary>
+        <div class="related cols-3">
           <a class="related-link" href="/es/vacation/">Cuenta los días para tu próximo viaje, con lista de equipaje</a>
           <a class="related-link" href="/es/exams/">Una cuenta regresiva para cada examen de tu lista</a>
         </div>
+          <button type="button" class="less" hidden>Mostrar menos</button>
+        </details>
       </div>
     </section>
 
@@ -342,6 +352,18 @@
     document.querySelectorAll(".lang-list a").forEach(function (a) {
       a.addEventListener("click", function () {
         try { localStorage.setItem("sc-lang-dismissed", "1"); } catch (e) {}
+      });
+    });
+  </script>
+  <script>
+    document.querySelectorAll("details.more").forEach(function (d) {
+      var less = d.querySelector(".less"), more = d.querySelector("summary");
+      less.hidden = false;
+      less.addEventListener("click", function () {
+        var top = less.getBoundingClientRect().top;
+        d.open = false;
+        more.focus({ preventScroll: true });
+        window.scrollBy({ top: more.getBoundingClientRect().top - top, behavior: "instant" });
       });
     });
   </script>

@@ -140,7 +140,7 @@
   ]
 }
   </script>
-  <link rel="stylesheet" href="/site.css?v=20261121b">
+  <link rel="stylesheet" href="/site.css?v=20261123b">
 </head>
 <body>
   <div class="suggest-bar" id="suggest" hidden>
@@ -284,6 +284,8 @@
           <summary>Posso compartilhar uma contagem com meu par ou amigos?</summary>
           <p>Sim, com a contagem regressiva compartilhada. Envie um link de convite pelo WhatsApp, Mensagens ou qualquer outro app. Ela continua ligada: se alguém mudar a data, a foto ou as notas, tudo é atualizado no celular e nos widgets de todo mundo. Compartilhar uma por vez é grátis, e entrar é sempre grátis.</p>
         </details>
+        <details class="more">
+          <summary>Mostrar mais</summary>
         <details>
           <summary>Funciona no iPad?</summary>
           <p>Sim. O Simple Count funciona no iPhone e no iPad (iOS e iPadOS 17.6 ou posterior) e sincroniza de graça contagens, notas e lembretes pelo seu próprio iCloud.</p>
@@ -292,19 +294,27 @@
           <summary>O Simple Count coleta meus dados?</summary>
           <p>Não. Segundo o rótulo de privacidade da App Store, nenhum dado é coletado. Não tem conta; suas contagens ficam no seu aparelho e no seu próprio iCloud, e o desenvolvedor nunca as vê, nem as compartilhadas.</p>
         </details>
+          <button type="button" class="less" hidden>Mostrar menos</button>
+        </details>
       </div>
     </section>
 
     <section class="section" id="guides" style="padding-top:0">
       <div class="wrap">
         <h2>Guias</h2>
-        <div class="related">
+        <div class="related cols-3">
           <a class="related-link" href="/pt/widget-guide/">Como colocar uma contagem regressiva na Tela de Início e na Tela Bloqueada</a>
           <a class="related-link" href="/pt/christmas/">Uma contagem regressiva para o Natal na sua Tela de Início</a>
           <a class="related-link" href="/pt/wedding/">Uma contagem para o casamento que vocês compartilham</a>
+        </div>
+        <details class="more">
+          <summary>Mostrar mais</summary>
+        <div class="related cols-3">
           <a class="related-link" href="/pt/vacation/">Conte os dias para a próxima viagem, com lista de mala</a>
           <a class="related-link" href="/pt/exams/">Uma contagem regressiva para cada prova</a>
         </div>
+          <button type="button" class="less" hidden>Mostrar menos</button>
+        </details>
       </div>
     </section>
 
@@ -342,6 +352,18 @@
     document.querySelectorAll(".lang-list a").forEach(function (a) {
       a.addEventListener("click", function () {
         try { localStorage.setItem("sc-lang-dismissed", "1"); } catch (e) {}
+      });
+    });
+  </script>
+  <script>
+    document.querySelectorAll("details.more").forEach(function (d) {
+      var less = d.querySelector(".less"), more = d.querySelector("summary");
+      less.hidden = false;
+      less.addEventListener("click", function () {
+        var top = less.getBoundingClientRect().top;
+        d.open = false;
+        more.focus({ preventScroll: true });
+        window.scrollBy({ top: more.getBoundingClientRect().top - top, behavior: "instant" });
       });
     });
   </script>
