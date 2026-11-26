@@ -141,15 +141,22 @@ counter we run ourselves on Cloudflare.</p>
 (Apple's own cloud infrastructure). No data is shared with any<br>
 other third party.</p>
 <h2 id="steps">Anonymous Step Counts</h2>
-<p>From version 2.5.9 until January 31, 2027, to see where new people<br>
-get stuck, a new install of Simple Count counts a few steps, each<br>
-once: for example that onboarding was finished, that a first<br>
+<p>From version 2.5.9 until January 31, 2027, Simple Count counts a<br>
+few steps anonymously. A new install counts its first steps once<br>
+each: for example that onboarding was finished, that a first<br>
 countdown was made, that a widget was placed, or that the app was<br>
-opened again after some days. We receive the step, how many days<br>
-after the install it happened, the app version and the country, and<br>
-keep daily totals only.</p>
+opened again after some days.</p>
+<p>From version 2.5.10, every install also counts, at most once a day:<br>
+that the app was opened (free or Pro, roughly how long ago it was<br>
+installed, roughly how many countdowns it holds, whether<br>
+notifications are on); whether a widget, the Apple Watch app or a<br>
+Live Activity is in use; which features were used that day (such as<br>
+making a countdown, notes, photos or Siri); and whether the Pro page<br>
+was seen, Buy tapped or Pro bought, and where in the app.</p>
+<p>We receive the step, the app version and the country, and keep<br>
+daily totals only.</p>
 <ul>
-<li>There is no name, no ID and nothing that connects two steps. We<br>
+<li>There is no name, no ID and nothing that connects two steps or two days. We<br>
 never receive your countdowns, notes or photos.</li>
 <li>Cloudflare, which runs the counter, receives the IP address to<br>
 deliver the message; we do not store it.</li>
