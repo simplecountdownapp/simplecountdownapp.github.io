@@ -7,7 +7,7 @@
 - Developer: Caner Tasan (independent developer)
 - Platforms: iPhone and iPad (iOS / iPadOS 17.6 or later), Apple Watch (watchOS 10 or later, since version 2.5.0)
 - Languages: English, Dutch, German, French, Spanish, Italian, Portuguese, Russian, Turkish, Japanese, Korean, Chinese (Simplified)
-- Privacy: App Store privacy label "Data Not Collected"; no account, data stays on the device and in the user's own iCloud
+- Privacy: no account, no ads, no tracking; countdowns stay on the device and in the user's own iCloud; new installs count a few steps anonymously for two weeks (privacy label: usage data, not linked; off switch in Settings)
 
 ## Free
 

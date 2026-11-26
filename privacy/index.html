@@ -18,7 +18,7 @@
 <main>
 <a class="back" href="/">← Simple Count</a>
 <h1>Privacy Policy</h1>
-<p><strong>Last updated: November 25, 2026</strong></p>
+<p><strong>Last updated: November 26, 2026</strong></p>
 <h2>Overview</h2>
 <p>Simple Count is a countdown widget app for iOS. Your privacy is<br>
 important to us. This policy explains what data Simple Count does<br>
@@ -135,10 +135,27 @@ not access or log shared data beyond what Apple's CloudKit<br>
 provides.</p>
 <h2>Third Parties</h2>
 <p>Simple Count does not use any third-party analytics, advertising<br>
-SDKs, or tracking tools.</p>
+SDKs, or tracking tools. The anonymous step counts above go to a<br>
+counter we run ourselves on Cloudflare.</p>
 <p>The iCloud sync and sharing features use <strong>Apple CloudKit</strong><br>
 (Apple's own cloud infrastructure). No data is shared with any<br>
 other third party.</p>
+<h2 id="steps">Anonymous Step Counts</h2>
+<p>From version 2.5.9 until January 31, 2027, to see where new people<br>
+get stuck, a new install of Simple Count counts a few steps, each<br>
+once: for example that onboarding was finished, that a first<br>
+countdown was made, that a widget was placed, or that the app was<br>
+opened again after some days. We receive the step, how many days<br>
+after the install it happened, the app version and the country, and<br>
+keep daily totals only.</p>
+<ul>
+<li>There is no name, no ID and nothing that connects two steps. We<br>
+never receive your countdowns, notes or photos.</li>
+<li>Cloudflare, which runs the counter, receives the IP address to<br>
+deliver the message; we do not store it.</li>
+<li>You can turn this off in Settings → Privacy. In Germany it is off<br>
+unless you turn it on. We delete the totals when the test ends.</li>
+</ul>
 <h2 id="website">Our Website</h2>
 <p>This part is about the website simplecountdownapp.github.io, not the<br>
 app. We count how many people visit each page, where they came from<br>
@@ -161,8 +178,8 @@ device a silent signal when a countdown changes on another device,<br>
 so it can update. This goes from Apple to your device and contains<br>
 no countdown data.</p>
 <h2>Children's Privacy</h2>
-<p>Simple Count does not collect data from anyone, including children<br>
-under 13.</p>
+<p>Simple Count does not collect personal data from anyone, including<br>
+children under 13.</p>
 <h2>Changes to This Policy</h2>
 <p>If this policy changes, the updated version will be posted at this<br>
 URL with a new "Last updated" date.</p>
