@@ -242,7 +242,7 @@
   <main>
     <section class="section video-section" id="video">
       <div class="wrap">
-        <video class="demo" id="demo" autoplay muted loop playsinline controls preload="metadata" poster="/video/simple-count.jpg"
+        <video class="demo" id="demo" muted loop playsinline controls preload="metadata" poster="/video/simple-count.jpg"
                aria-label="Simple Count in 20 seconds: countdown widgets on the Home Screen, Lock Screen and Dynamic Island">
           <source src="/video/simple-count-vertical.mp4" type="video/mp4" media="(max-width: 640px)">
           <source src="/video/simple-count.mp4" type="video/mp4">
@@ -254,7 +254,15 @@
         var v = document.getElementById("demo");
         var phone = matchMedia("(max-width: 640px)");
         var still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (still) { v.removeAttribute("autoplay"); v.pause(); }
+        var inView = false, userPaused = false, ours = false;
+        function play() {
+          if (still || userPaused || !inView) return;
+          var p = v.play(); if (p && p.catch) p.catch(function () {});
+        }
+        function pause() { if (!v.paused) { ours = true; v.pause(); } }
+        // a pause from the controls sticks; our own pause (scrolled away) doesn't
+        v.addEventListener("pause", function () { if (ours) ours = false; else if (inView) userPaused = true; });
+        v.addEventListener("play", function () { userPaused = false; });
         // pick the cut for the screen now, and again whenever it crosses phone width (rotation, resizing)
         function pick() {
           var name = phone.matches ? "simple-count-vertical" : "simple-count";
@@ -262,10 +270,19 @@
           v.poster = "/video/" + name + ".jpg";
           v.src = "/video/" + name + ".mp4";
           v.load();
-          if (!still) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+          play();
         }
         pick();
         if (phone.addEventListener) phone.addEventListener("change", pick); else phone.addListener(pick);
+        if (!("IntersectionObserver" in window)) { inView = true; play(); return; }
+        var started = false;
+        new IntersectionObserver(function (entries) {
+          inView = entries[0].isIntersecting;
+          if (inView) {
+            if (!started) { started = true; v.currentTime = 0; }  // first time in view: from the beginning
+            play();
+          } else pause();
+        }, { threshold: 0.5 }).observe(v);
       })();
     </script>
     <section class="section" id="features">
