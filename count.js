@@ -8,7 +8,7 @@
   var utm = /[?&]utm_source=([A-Za-z0-9._-]{1,40})/.exec(location.search);
   var from = /^[a-z-]+:\/\/([^\/:?#]+)/i.exec(document.referrer);
   function send(kind) {
-    navigator.sendBeacon("https://simplecount-site-visits.simplecount.workers.dev/v",
+    navigator.sendBeacon("https://visits.simplecountapp.com/v",
       JSON.stringify({ p: page, k: kind, r: from ? from[1] : "", u: utm ? utm[1] : "" }));
   }
   // A reload or the back button is not a new visit; a page loaded in the background counts once it is seen.
