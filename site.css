@@ -75,6 +75,11 @@ p { margin: 0 0 12px; }
 .event-go { flex: none; font-size: 24px; line-height: 1; color: var(--muted); }
 @media (max-width: 560px) { .event-banner { border-radius: 22px; } }
 .article-head .event-banner { margin: 0 0 20px; }
+/* Banners share one row (side by side when they fit, stacked on phones) */
+.event-banners { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 0 auto 22px; }
+.event-banners .event-banner { margin: 0; }
+.event-banners:not(:has(.event-banner:not([hidden]))) { display: none; }
+.article-head .event-banners { justify-content: flex-start; margin: 0 0 20px; }
 .shots { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
          padding: 40px 20px 0; margin: 0 -20px; scrollbar-width: none; }
 .shots::-webkit-scrollbar { display: none; }
