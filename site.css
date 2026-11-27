@@ -69,6 +69,8 @@ p { margin: 0 0 12px; }
 .event-banner:hover { color: var(--ink); transform: translateY(-1px); }
 .event-emoji { flex: none; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
                font-size: 22px; background: var(--coral-soft); }
+.event-sale { font-family: var(--round); font-size: 11.5px; font-weight: 800; letter-spacing: -0.03em;
+              color: #fff; background: var(--coral, #ff686b); }
 .event-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.25; }
 .event-text strong { font-family: var(--round); font-size: 15px; }
 .event-text span { font-size: 13px; color: var(--ink-2); }
