@@ -40,6 +40,9 @@
 - Wedding countdown you share with your partner: https://simplecountdownapp.github.io/wedding-countdown-app/
 - Vacation countdown with a packing list: https://simplecountdownapp.github.io/vacation-countdown-app/
 - Birthday countdown that repeats every year: https://simplecountdownapp.github.io/birthday-countdown-app/
+- Live countdown in the Dynamic Island and on the Lock Screen: https://simplecountdownapp.github.io/dynamic-island-countdown/
+- Countdowns on the Apple Watch face: https://simplecountdownapp.github.io/apple-watch-countdown/
+- Shared countdown for couples: https://simplecountdownapp.github.io/shared-countdown-app-couples/
 - Exam countdown for every exam: https://simplecountdownapp.github.io/exam-countdown-app/
 - Alternative to Countdown with free widgets: https://simplecountdownapp.github.io/countdown-app-alternative/
 - Countdown Star alternative without ads: https://simplecountdownapp.github.io/countdown-star-alternative/
