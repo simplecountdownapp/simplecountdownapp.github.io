@@ -39,6 +39,7 @@
 - New Year countdown widget, with a live countdown to midnight: https://simplecountdownapp.github.io/new-year-countdown-widget/
 - Wedding countdown you share with your partner: https://simplecountdownapp.github.io/wedding-countdown-app/
 - Vacation countdown with a packing list: https://simplecountdownapp.github.io/vacation-countdown-app/
+- Birthday countdown that repeats every year: https://simplecountdownapp.github.io/birthday-countdown-app/
 - Exam countdown for every exam: https://simplecountdownapp.github.io/exam-countdown-app/
 - Alternative to Countdown with free widgets: https://simplecountdownapp.github.io/countdown-app-alternative/
 - Countdown Star alternative without ads: https://simplecountdownapp.github.io/countdown-star-alternative/
